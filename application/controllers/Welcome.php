@@ -3,23 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	public function index()
-	{
-		$this->load->view('welcome_message');
+	{	
+		$page = 'welcome_message';
+
+		// bai kung mo pass kag view bai, ang gamita nga variable is $page = 'view'
+		$this->load->view('template', compact('page'));
+
+		/* 
+			bai kung naa kay ipasa nga variable sa view below example, ang gamita $vars variable
+			bai ang pag access nimo sa variable sa view, kay example, name, age. kung unsa iyang key
+		*/
+		// $vars = [
+		// 	'name' => 'First Name',
+		// 	'age' => 69
+		// ];
+		// $this->load->view('template', compact('page', 'vars'));
+		
 	}
 }
