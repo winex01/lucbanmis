@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-lg-6">
             <h1>Welcome</h1>
-            <p class="lead">Chris</p>
+            <p class="lead">jim</p>
           </div>
         </div>
       </div>
