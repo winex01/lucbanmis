@@ -1,27 +1,29 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//auth
+$route['login'] = 'auth/login';
+$route['logout'] = 'auth/logout';
 
-// reports
-$route['printForm137/:any'] = 'report/printForm137';
+// dashboard
+$route['dashboard'] = 'dashboard/dashboards';
 
 // users
 $route['addUser'] = 'user/addUser';
-$route['user'] = 'user/users';
-
-//subjects
-$route['addSubject'] = 'subject/addSubject';
-$route['subject'] = 'subject/subjects';
+$route['users'] = 'user/users';
 
 // students
 $route['addStudent'] = 'student/addStudent';
-$route['studentRecord'] = 'student/studentRecord';
+$route['students'] = 'student/students';
 
-$route['home'] = 'info/home';
-$route['contact'] = 'info/contact';
-$route['about'] = 'info/about';
+//subjects
+$route['addSubject'] = 'subject/addSubject';
+$route['subjects'] = 'subject/subjects';
+
+// reports
+$route['printForm137'] = 'report/printForm137';
 
 // default
-$route['default_controller'] = 'info/home';
+$route['default_controller'] = 'auth/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

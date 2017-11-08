@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Student extends CI_Controller {
 
-	public function studentRecord()
+	public function students()
 	{
-		$page = 'student/studentRecord';
+		$page = 'student/students';
 		$this->load->view('template', compact('page'));
 	}
 
@@ -14,13 +14,6 @@ class Student extends CI_Controller {
 	{
 
 		$page = 'student/addStudent';
-		$this->load->view('template', compact('page'));
-	}
-
-
-	public function updateStudent()
-	{
-		$page = 'student/updateStudent';
 		$this->load->view('template', compact('page'));
 	}
 

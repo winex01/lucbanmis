@@ -1,59 +1,53 @@
 
+
+ 
 <div class="container">
-  
+
 
   <ol class="breadcrumb">
     <li>
       <a href="dashboard">Dashboard</a>
     </li>
-    <li class="active">View Users</li>
+    <li class="active">Add Subject</li>
   </ol>
+  
 
-
-  <a href="addUser" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New User</a>
+  <a href="addSubject" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New Subject</a>
   <br>
   <br>
 
-  <table id="myTable-user" class="table table-striped table-hover ">
+  <table id="myTable-subject" class="table table-striped table-hover ">
     <thead>
       <tr>
         <th>ID</th>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
-        <th>User Type</th>
+        <th>Subject Code</th>
+        <th>Descriptions</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>101</td>
-        <td>Chris Jim</td>
-        <td>Egot</td>
-        <td>Sabosido</td>
-        <td>Administrator</td>
+        <td>CS 10</td>
+        <td>Sorfware Development</td>
         <td>
           <button class="btn btn-info btn-sm"><i class="ion ion-android-refresh"> </i> Update</button>
           <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
         </td>
       </tr>
       <tr>
-        <td>101</td>
-        <td>Chris Jim</td>
-        <td>Egot</td>
-        <td>Sabosido</td>
-        <td>Registrar</td>
+        <td>102</td>
+        <td>CS 11</td>
+        <td>Data Communication</td>
         <td>
           <button class="btn btn-info btn-sm"><i class="ion ion-android-refresh"> </i> Update</button>
           <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
         </td>
       </tr>
       <tr class="info">
-        <td>101</td>
-        <td>Chris Jim</td>
-        <td>Egot</td>
-        <td>Sabosido</td>
-        <td>Cashier</td>
+        <td>103</td>
+        <td>CS 20</td>
+        <td>Operating System</td>
         <td>
           <button class="btn btn-info btn-sm"><i class="ion ion-android-refresh"> </i> Update</button>
           <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
@@ -62,8 +56,7 @@
        
     </tbody>
      
-  </table> 
+  </table>
 
 
-
-</div>  
+</div>

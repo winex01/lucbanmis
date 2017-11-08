@@ -16,11 +16,4 @@ class User extends CI_Controller {
 		$this->load->view('template', compact('page'));
 	}
 
-
-	public function updateUser()
-	{
-		$page = 'user/updateUser';
-		$this->load->view('template', compact('page'));
-	}
-
 }
