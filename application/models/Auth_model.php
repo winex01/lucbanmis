@@ -29,10 +29,33 @@ class Auth_model extends CI_Model {
     	return false;
     }
 
+    public function groupDescription()
+    {
+        if ($this->notLogged()) { redirect('/'); }
+
+        return $this->session->userdata('description');
+    }
+
+    public function id()
+    {
+        if ($this->notLogged()) { redirect('/'); }
+
+        return $this->session->userdata('id');
+    }
+
     public function logout()
     {
     	$this->session->sess_destroy();
     	redirect('/');
+    }
+
+    public function name()
+    {
+        if ($this->notLogged()) { redirect('/'); }
+
+        $name = $this->session->userdata('first_name') .' ' .$this->session->userdata('last_name');
+
+        return ucwords($name);
     }
 
     public function notLogged()
@@ -58,20 +81,8 @@ class Auth_model extends CI_Model {
 
     }
 
-    public function name()
-    {
-        if ($this->notLogged()) { redirect('/'); }
+    
 
-        $name = $this->session->userdata('first_name') .' ' .$this->session->userdata('last_name');
-
-        return ucwords($name);
-    }
-
-    public function id()
-    {
-        if ($this->notLogged()) { redirect('/'); }
-
-        return $this->session->userdata('id');
-    }
+    
 
 }

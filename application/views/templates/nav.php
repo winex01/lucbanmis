@@ -17,46 +17,63 @@
               <li class="<?php active('dashboard'); ?>">
                 <a href="dashboard"><i class="fa fa-phone text-green"></i> Dashboard</a>
               </li>
-                
-              <!-- users -->
-              <li class="dropdown <?php active('users'); active('addUser'); ?>">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> User <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="download">
-                  <li class="<?php active('users'); ?>"><a href="users"><i class="ion ion-ios-search"> </i> View Users</a></li>
-                  <li class="<?php active('addUser'); ?>"><a href="addUser"><i class="ion ion-ios-plus"> </i> Add User</a></li>
-                </ul>
-              </li>
+         
+
+               <?php if($this->group->accessUsers()): ?>       
+                    <!-- users -->
+                    <li class="dropdown <?php active('users'); active('addUser'); ?>">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> User <span class="caret"></span></a>
+                      <ul class="dropdown-menu" aria-labelledby="download">
+                        
+                        <?php if($this->group->accessViewUsers()): ?>
+                          <li class="<?php active('users'); ?>"><a href="users"><i class="ion ion-ios-search"> </i> View Users</a></li>
+                        <?php endif; ?>
+                        
+                        <?php if($this->group->accessAddUser()): ?>
+                          <li class="<?php active('addUser'); ?>"><a href="addUser"><i class="ion ion-ios-plus"> </i> Add User</a></li>
+                        <?php endif; ?>
+                      
+                      </ul>
+                    </li>
+              <?php endif; ?>
 
 
-              <!-- students -->
-              <li class="dropdown <?php active('students'); active('addStudent'); ?>">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Student <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="download">
-                  <li class="<?php active('students'); ?>"><a href="students"><i class="ion ion-ios-search"> </i> View Students</a></li>
-                  <li class="<?php active('addStudent'); ?>"><a href="addStudent"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
-                </ul>
-              </li>
+             <?php if($this->group->accessStudents()): ?>  
+                    <!-- students -->
+                    <li class="dropdown <?php active('students'); active('addStudent'); ?>">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Student <span class="caret"></span></a>
+                      <ul class="dropdown-menu" aria-labelledby="download">
+
+                        <?php if($this->group->accessViewStudents()): ?>
+                          <li class="<?php active('students'); ?>"><a href="students"><i class="ion ion-ios-search"> </i> View Students</a></li>
+                        <?php endif; ?>
+                      
+                        <?php if($this->group->accessAddStudent()): ?>
+                          <li class="<?php active('addStudent'); ?>"><a href="addStudent"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
+                        <?php endif; ?>
+
+                      </ul>
+                    </li>
+             <?php endif; ?>
 
 
-              <!-- subjects -->
-              <li class="dropdown <?php active('subjects'); active('addSubject'); ?>">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Subject<span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="download">
-                  <li class="<?php active('subjects'); ?>"><a href="subjects"><i class="ion ion-ios-search"> </i> View Subjects</a></li>
-                  <li class="<?php active('addSubject'); ?>"><a href="addSubject"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
-                </ul>
-              </li>
+             <?php if($this->group->accessSubjects()): ?>  
+                    <!-- subjects -->
+                    <li class="dropdown <?php active('subjects'); active('addSubject'); ?>">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Subject<span class="caret"></span></a>
+                      <ul class="dropdown-menu" aria-labelledby="download">
 
+                        <?php if($this->group->accessViewSubjects()): ?>
+                          <li class="<?php active('subjects'); ?>"><a href="subjects"><i class="ion ion-ios-search"> </i> View Subjects</a></li>
+                        <?php endif; ?>
+                        
+                        <?php if($this->group->accessAddSubject()): ?>
+                        <li class="<?php active('addSubject'); ?>"><a href="addSubject"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
+                        <?php endif; ?>
 
-              <!-- reports -->
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Report <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="download">
-                  <li><a href="printForm137"><i class="ion ion-ios-plus"> </i> Form 137-A</a></li>
-                </ul>
-              </li>
-
-
+                      </ul>
+                    </li>
+            <?php endif; ?>
 
 
 
