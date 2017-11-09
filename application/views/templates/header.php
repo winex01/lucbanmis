@@ -6,9 +6,11 @@
     <title>Lucban Academy MIS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="public/css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="public/css/custom.min.css">
-    <link href="public/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.css'); ?>" media="screen">
+    <link href="<?= base_url('public/css/jquery.dataTables.min.css'); ?>" rel="stylesheet">
+
+
   </head>
   <body>
 

@@ -37,6 +37,7 @@
         <?php endif; ?>
 
         <form class="form-horizontal" method="POST" action="login">
+          <?php csrf(); ?>
           <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
             <div class="col-sm-10">

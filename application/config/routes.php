@@ -11,6 +11,7 @@ $route['dashboard'] = 'dashboard/dashboards';
 // users
 $route['addUser'] = 'user/addUser';
 $route['users'] = 'user/users';
+$route['usersList'] = 'user/ajax_list';
 
 // students
 $route['addStudent'] = 'student/addStudent';

@@ -2,37 +2,45 @@
 <!-- end of container -->
 
 
-<script src="public/js/jquery-1.10.2.min.js"></script>
+<script src="public/js/jquery-2.2.3.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
-<script src="public/js/custom.js"></script>
 
 <!-- Data Tables -->
-<script type="text/javascript" src="public/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="public/js/dataTables.bootstrap.min.js"></script>
-<!-- Font Awesome -->
-<link rel="stylesheet" href="public/icon/font-awesome-4.5.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="public/icon/ionicons-2.0.1/css/ionicons.min.css">
-
-
+<script type="text/javascript" src="<?= base_url('public/js/jquery.dataTables.min.js'); ?>"></script>
 
 <script type="text/javascript">
-	
-    function printreport(id){
-        window.open('printForm137?id='+id,'name','width=600,height=400');
-    }
-
-    function loadTables(tableID){
-        $(function() {
-            $(tableID).DataTable();
-        });
-    }
-    
-    loadTables('#myTable-subject');
-    loadTables('#myTable-student');
-    loadTables('#myTable-user');
-
-</script>	
+ 
+ 
+$(document).ready(function() {
+ 
+    //datatables
+var table = $('#table').DataTable({ 
+ 
+        "processing": true, //Feature control the processing indicator.
+        "serverSide": true, //Feature control DataTables' server-side processing mode.
+        "order": [], //Initial no order.
+ 
+        // Load data for the table's content from an Ajax source
+        "ajax": {
+            "url": "<?php echo base_url('usersList')?>",
+            "type": "POST",
+            "data": {
+                '<?php csrfName(); ?>' : '<?php csrfHash(); ?>'
+            }
+        },
+ 
+        //Set column definition initialisation properties.
+        "columnDefs": [
+        { 
+            "targets": [ 0 ], //first column / numbering column
+            "orderable": false, //set not orderable
+        },
+        ],
+ 
+    });
+ 
+});
+</script>
 
 
 
