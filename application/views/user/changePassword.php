@@ -1,4 +1,4 @@
-<div class="modal fade" id="change-password">
+<div class="modal fade" id="modal-change-password">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
