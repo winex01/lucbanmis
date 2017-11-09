@@ -12,12 +12,13 @@
           <li class="active">View Users</li>
         </ol>
 
-
+      <?php if($this->group->accessAddUser()): ?>
         <a href="addUser" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New User</a>
-        <br>
-        <br>
+      <?php endif; ?> 
+      <br>
+      <br>
 
-        <table id="table" class="table table-hover table-striped">
+        <table id="users-table" class="table table-hover table-striped">
             <thead>
                 <tr>
                     <th>No</th>

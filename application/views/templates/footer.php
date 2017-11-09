@@ -9,12 +9,10 @@
 <script type="text/javascript" src="<?= base_url('public/js/jquery.dataTables.min.js'); ?>"></script>
 
 <script type="text/javascript">
- 
- 
 $(document).ready(function() {
  
     //datatables
-var table = $('#table').DataTable({ 
+var table = $('#users-table').DataTable({ 
  
         "processing": true, //Feature control the processing indicator.
         "serverSide": true, //Feature control DataTables' server-side processing mode.
