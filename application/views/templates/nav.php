@@ -81,10 +81,14 @@
 
           <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-person"> </i> <?= $this->auth->name() ?> <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-person"> </i> 
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <?= $this->auth->name() ?> <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="download">
                  
-                <li><a data-toggle="modal" href='#modal-change-password'><i class="ion ion-android-refresh"> </i> Change Password</a></li>
+                <li><a data-toggle="modal" href='#modal-change-password'><i class="ion ion-android-refresh"> </i> 
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                Change Password</a></li>
                 <li><a href="logout"><i class="ion ion-log-out"> </i><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
               </ul>
             </li>

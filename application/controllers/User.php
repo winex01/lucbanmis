@@ -60,5 +60,37 @@ class User extends CI_Controller {
         echo json_encode($output);
     }
 
+    public function changePassword()
+    {
+
+        $requestFrom = $this->input->post('request');
+
+        $this->form_validation->set_rules('current', 'Current Password', 'trim|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        $this->form_validation->set_rules('passconf', 'Password Confirmation', 'trim|required|matches[password]');
+        
+        $current = $this->input->post('current');
+        $password = $this->input->post('password');
+
+        // if fail validation
+        if ($this->form_validation->run() == FALSE)
+        {
+            // create flash variable to open modal when validation fails
+            $this->session->set_flashdata('modalChangePassword', true);
+            $this->session->set_flashdata('error', validation_errors());
+        }
+        
+        // check if current password input if correct
+        if (md5($current) != $this->auth->password()){
+
+            $this->session->set_flashdata('modalChangePassword', true);
+            $this->session->set_flashdata('error', 'The Current Password field is Incorrect.');
+        }
+
+        // validation success
+        $this->user->insert($password);
+        redirect($requestFrom);
+
+    }
 
 }

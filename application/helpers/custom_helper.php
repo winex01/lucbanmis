@@ -54,3 +54,27 @@ if ( ! function_exists('csrfHash'))
     }   
 }
 
+
+// get uri
+if ( ! function_exists('currentURI'))
+{
+    function currentURI()
+    {
+         $ci =& get_instance();
+        
+        $uri = $ci->uri->uri_string();
+        echo '<input type="hidden" name="request" value="'.$uri.'" />';
+    }   
+}
+
+// flash info 
+if ( ! function_exists('flashInfo'))
+{
+    function flashInfo($msg)
+    {
+         $ci =& get_instance();
+         
+         $ci->session->set_flashdata('flashInfo', $msg);
+        
+    }   
+}

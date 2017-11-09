@@ -1,6 +1,8 @@
 
+<!-- modals -->
 <?php $this->load->view('user/changePassword'); ?>
-
+<?php $this->load->view('flash/info'); ?>
+<!-- end modals -->
 
 
 </div>
@@ -15,14 +17,12 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
- 
     //datatables
-var table = $('#users-table').DataTable({ 
+    $('#users-table').DataTable({ 
  
         "processing": true, //Feature control the processing indicator.
         "serverSide": true, //Feature control DataTables' server-side processing mode.
         "order": [], //Initial no order.
- 
         // Load data for the table's content from an Ajax source
         "ajax": {
             "url": "<?php echo base_url('usersList')?>",
@@ -31,7 +31,6 @@ var table = $('#users-table').DataTable({
                 '<?php csrfName(); ?>' : '<?php csrfHash(); ?>'
             }
         },
- 
         //Set column definition initialisation properties.
         "columnDefs": [
         { 
@@ -70,6 +69,20 @@ var table = $('#subjects-table').DataTable({
 
  
 });
+
+
+$(function() {
+    <?php if($this->session->userdata('modalChangePassword')): ?>
+        $('#modal-change-password').modal();
+    <?php endif; ?>
+});
+
+$(function() {
+    <?php if($this->session->userdata('flashInfo')): ?>
+        $('#modal-info').modal();
+    <?php endif; ?>
+});
+
 </script>
 
 

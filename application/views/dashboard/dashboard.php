@@ -6,7 +6,7 @@
 	<?php 
 
 		echo '<pre>';
-			print_r($this->auth->groupDescription());
+			print_r($this->session->userdata('error'));
 		echo '</pre>';
 
 

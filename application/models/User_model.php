@@ -89,5 +89,18 @@ class User_model extends CI_Model {
         $this->db->from($this->table);
         return $this->db->count_all_results();
     }
+
+    public function insert($password)
+    {
+        $this->db->set('password', md5($password));
+        $this->db->where('id', $this->auth->id());
+        $this->db->update('users');
+
+        // change storage session of password
+        $this->session->set_userdata('password', md5($password));
+
+        // modal info
+        flashInfo('Change Password Successfully!');
+    }
  
 }
