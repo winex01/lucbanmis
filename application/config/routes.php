@@ -19,15 +19,10 @@ $route['addStudent'] = 'student/addStudent';
 $route['students']   = 'student/students';
 
 //subjects
-<<<<<<< HEAD
 $route['addNewSubject'] = 'subject/addNewSubject';
 $route['addSubjectPage'] = 'subject/addSubjectPage';
 $route['subjects'] = 'subject/subjects';
 $route['subjectsList'] = 'subject/ajax_list';
-=======
-$route['addSubject'] = 'subject/addSubject';
-$route['subjects']   = 'subject/subjects';
->>>>>>> 9b7efb38bbbcfd8cde7c63c45b1abbe740af28a4
 
 // reports
 $route['printForm137'] = 'report/printForm137';
