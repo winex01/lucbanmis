@@ -98,6 +98,9 @@ class User_model extends CI_Model {
 
         // change storage session of password
         $this->session->set_userdata('password', md5($password));
+
+        // modal info
+        flashInfo('Change Password Successfully!');
     }
  
 }

@@ -1,6 +1,8 @@
 
+<!-- modals -->
 <?php $this->load->view('user/changePassword'); ?>
-
+<?php $this->load->view('flash/info'); ?>
+<!-- end modals -->
 
 
 </div>
@@ -45,6 +47,12 @@ $(document).ready(function() {
 $(function() {
     <?php if($this->session->userdata('modalChangePassword')): ?>
         $('#modal-change-password').modal();
+    <?php endif; ?>
+});
+
+$(function() {
+    <?php if($this->session->userdata('flashInfo')): ?>
+        $('#modal-info').modal();
     <?php endif; ?>
 });
 

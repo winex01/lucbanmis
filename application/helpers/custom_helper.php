@@ -66,3 +66,15 @@ if ( ! function_exists('currentURI'))
         echo '<input type="hidden" name="request" value="'.$uri.'" />';
     }   
 }
+
+// flash info 
+if ( ! function_exists('flashInfo'))
+{
+    function flashInfo($msg)
+    {
+         $ci =& get_instance();
+         
+         $ci->session->set_flashdata('flashInfo', $msg);
+        
+    }   
+}
