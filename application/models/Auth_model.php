@@ -7,7 +7,8 @@ class Auth_model extends CI_Model {
     {
 
     	$user = $this->db->query("
-    			SELECT users.id, 
+    			SELECT users.id,
+                       users.password, 
     				   users.first_name,
     				   users.middle_name,
     				   users.last_name,
@@ -66,6 +67,13 @@ class Auth_model extends CI_Model {
 		}
 
 		return false;
+    }
+
+    public function password()
+    {
+        if ($this->notLogged()) { redirect('/'); }
+
+        return $this->session->userdata('password');
     }
 
     public function redirectIfNotLogged()
