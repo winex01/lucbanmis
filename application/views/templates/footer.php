@@ -1,3 +1,8 @@
+
+<?php $this->load->view('user/changePassword'); ?>
+
+
+
 </div>
 <!-- end of container -->
 
