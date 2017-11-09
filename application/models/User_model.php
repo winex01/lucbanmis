@@ -95,6 +95,9 @@ class User_model extends CI_Model {
         $this->db->set('password', md5($password));
         $this->db->where('id', $this->auth->id());
         $this->db->update('users');
+
+        // change storage session of password
+        $this->session->set_userdata('password', md5($password));
     }
  
 }
