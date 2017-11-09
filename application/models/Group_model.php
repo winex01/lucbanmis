@@ -110,17 +110,41 @@ class Group_model extends CI_Model {
     */
     public function accessSubjects()
     {
-        return false;
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
     }
 
     public function accessViewSubjects()
     {
-        return false;
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
     }
 
     public function accessAddSubject()
     {
-        return false;
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
     }
 
 
