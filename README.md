@@ -1,17 +1,18 @@
-# Codeigniter Ion Auth Tutorial
-Codeigniter Ion Auth Library Integration - A step by step guide
+# Lucban M.I.S
+Built Using Codeigniter 3.1.6 framework.
 
-**You will find the video tutorial guide here  - https://youtu.be/fucEtLz-PsI**
+**You will find the demo here  - https://example.com**
 
 
-Ion Auth is a simple and lightweight authentication library for the CodeIgniter framework.
+# User Groups & Features
 
-# Features
-
-* Registration
-* Login and Logout
-* Forgotten Password
-* Change Password Method
-* User groups
-* “Remember Me” funtionality
-* Extremely Customizable
+* Admin
+* Cashier
+* Encode/Teacher
+* Registrar
+* CRUD student
+* CRUD account by admin only
+* CRUD subjects
+* student payments
+* student records
+* reports
