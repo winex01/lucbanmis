@@ -48,7 +48,7 @@ class UsersSeeder extends Seeder {
             echo ".";
 
             $data = array(
-                'first_name' => $this->faker->lastName,
+                'first_name' => $this->faker->firstName,
                 'middle_name' => $this->faker->lastName,
                 'last_name' => $this->faker->lastName,
                 'birth_date' => $this->faker->dateTimeThisCentury->format('Y-m-d'),
