@@ -36,7 +36,8 @@ class Migration_Users extends CI_Migration {
             ),
             'group_id' => array(
                 'type' => 'INT',
-                'constraint' => 11
+                'constraint' => 11,
+                'default' => 1
             ),
             'created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
             'updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP',
