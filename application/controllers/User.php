@@ -78,6 +78,8 @@ class User extends CI_Controller {
             // create flash variable to open modal when validation fails
             $this->session->set_flashdata('modalChangePassword', true);
             $this->session->set_flashdata('error', validation_errors());
+
+            redirect($requestFrom);    
         }
         
         // check if current password input if correct
@@ -85,11 +87,13 @@ class User extends CI_Controller {
 
             $this->session->set_flashdata('modalChangePassword', true);
             $this->session->set_flashdata('error', 'The Current Password field is Incorrect.');
+        }else{
+            // validation success
+            $this->user->insert($password);
         }
 
-        // validation success
-        $this->user->insert($password);
-        redirect($requestFrom);
+        redirect($requestFrom);    
+        
 
     }
 
