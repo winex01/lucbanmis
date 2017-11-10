@@ -9,7 +9,6 @@ class UsersSeeder extends Seeder {
         $this->db->truncate($this->table);
         $this->db->query('SET FOREIGN_KEY_CHECKS = 1;');
 
-        $limit = 1;
         //seed records manually
         $constData = [
             array(
@@ -41,11 +40,10 @@ class UsersSeeder extends Seeder {
         
         foreach ($constData as $user) {
             $this->db->insert($this->table, $user);
-            $limit++;
         }
 
-        // dummy accounts
         $limit = 96;
+        // dummy accounts
         for ($i = 0; $i < $limit; $i++) {
             echo ".";
 
