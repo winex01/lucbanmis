@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * CodeIgniter
  *
@@ -305,6 +307,12 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
 
+/*
+ * --
+ * LOAD THE COMPOSER AUTOLOAD FILE
+ * --
+ */
+include_once './vendor/autoload.php';
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
