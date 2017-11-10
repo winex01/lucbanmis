@@ -26,7 +26,7 @@
                     <th>Middle Name</th>
                     <th>Last Name</th>
                     <th>Gender</th>
-                    <th>Created</th>
+                    <th>Birthdate</th>
                     <th>Group</th>
                     <th>Action</th>
                 </tr>

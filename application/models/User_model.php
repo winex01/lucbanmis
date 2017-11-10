@@ -11,7 +11,7 @@ class User_model extends CI_Model {
             'users.middle_name',
             'users.last_name',
             'users.gender', 
-            'users.created_at', 
+            'users.birth_date', 
             'users.group_id', 
             'groups.description'
     ); //set column field database for datatable orderable
@@ -21,7 +21,7 @@ class User_model extends CI_Model {
             'users.middle_name',
             'users.last_name',
             'gender', 
-            'users.created_at', 
+            'users.birth_date', 
             'users.group_id', 
             'groups.description'
     ); //set column field database for datatable searchable 

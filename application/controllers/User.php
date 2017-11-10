@@ -35,7 +35,7 @@ class User extends CI_Controller {
             $row[] = $user->middle_name;
             $row[] = $user->last_name;
             $row[] = $user->gender;
-            $row[] = $user->created_at;
+            $row[] = date('M. d Y', strtotime($user->birth_date));
             $row[] = ucfirst($user->description);
             $row[] = '
             			<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
