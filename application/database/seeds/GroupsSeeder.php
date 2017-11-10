@@ -24,6 +24,7 @@ class GroupsSeeder extends Seeder {
             $i++;
         }
 
+        echo PHP_EOL;
         echo 'Seeding '.$i. ' groups.';
         echo PHP_EOL;
     }
