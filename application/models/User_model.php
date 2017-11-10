@@ -26,7 +26,8 @@ class User_model extends CI_Model {
             'groups.description'
     ); //set column field database for datatable searchable 
     
-    var $order = array('users.id' => 'asc'); // default order 
+    // var $order = array('users.id' => 'asc'); // default order 
+    var $order = array('users.first_name' => 'asc'); // default order 
  
     private function _get_datatables_query()
     {
