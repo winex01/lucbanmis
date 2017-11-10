@@ -17,6 +17,20 @@ class Tools extends CI_Controller {
         $this->faker = Faker\Factory::create();
     }
 
+    public function createDatabase($name) { 
+        if ($this->dbforge->create_database($name)){
+            echo "{$name} Database Created Successfully!" . PHP_EOL;
+        }
+       
+    }
+
+    public function dropDatabase($name) { 
+        if ($this->dbforge->drop_database($name)){
+            echo "{$name} Database Droped Successfully!" . PHP_EOL;
+        }
+       
+    }
+
     public function message($to = 'World') {
         echo "Hello {$to}!" . PHP_EOL;
     }
