@@ -1,5 +1,6 @@
 <?php
 
+
 class Tools extends CI_Controller {
 
     public function __construct() {
@@ -12,6 +13,7 @@ class Tools extends CI_Controller {
 
         $this->load->dbforge();
         $this->load->library('migration');
+        $this->load->library('seeder');
 
         // initiate faker
         $this->faker = Faker\Factory::create();
