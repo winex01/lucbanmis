@@ -1,12 +1,12 @@
+</div>
+<!-- end of container -->
+
 
 <!-- modals -->
 <?php $this->load->view('user/changePassword'); ?>
 <?php $this->load->view('flash/info'); ?>
 <!-- end modals -->
 
-
-</div>
-<!-- end of container -->
 
 
 <script src="public/js/jquery-2.2.3.min.js"></script>
