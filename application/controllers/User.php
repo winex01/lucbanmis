@@ -38,11 +38,11 @@ class User extends CI_Controller {
             $row[] = $user->created_at;
             $row[] = ucfirst($user->description);
             $row[] = '
-            			<button type="button" class="btn btn-default btn-warning btn-sm">
+            			<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
 						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 						</button>
 
-		            	<button type="button" class="btn btn-default btn-danger btn-sm">
+		            	<button type="button" class="btn btn-default btn-danger btn-sm" data-toggle="tooltip" title="Delete">
 						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
             		 ';
