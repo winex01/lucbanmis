@@ -5,6 +5,7 @@
 <!-- modals -->
 <?php $this->load->view('user/changePassword'); ?>
 <?php $this->load->view('flash/info'); ?>
+<?php $this->load->view('flash/confirmDelete'); ?>
 <!-- end modals -->
 
 
@@ -30,6 +31,12 @@ $(function() {
         $('#modal-info').modal();
     <?php endif; ?>
 });
+
+function confirmDelete(id, url){
+	$('#id').val(id);
+	 $('#form-delete').attr('action', url);
+	$('#modal-confirm-delete').modal();
+}
 </script>
 
 

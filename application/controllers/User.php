@@ -27,6 +27,7 @@ class User extends CI_Controller {
         $list = $this->user->get_datatables();
         $data = array();
         $no = $_POST['start'];
+
         foreach ($list as $user) {
             $no++;
             $row = array();
@@ -41,11 +42,7 @@ class User extends CI_Controller {
             			<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
 						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 						</button>
-
-		            	<button type="button" class="btn btn-default btn-danger btn-sm" data-toggle="tooltip" title="Delete">
-						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</button>
-            		 ';
+            		 '.confirmDelete($user->id, 'deleteUser');
  
             $data[] = $row;
         }
@@ -93,7 +90,19 @@ class User extends CI_Controller {
         }
 
         redirect($requestFrom);    
-        
+    }
+
+    public function delete()
+    {
+        $id      = $this->input->post('id');
+        $request = $this->input->post('request');
+
+        if (!empty($id) && !empty($request)){
+            $this->user->delete($id);
+            flashInfo('Deleted Successfully!');
+        }
+
+        redirect($request);
 
     }
 

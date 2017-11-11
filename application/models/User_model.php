@@ -31,9 +31,10 @@ class User_model extends CI_Model {
  
     private function _get_datatables_query()
     {
-         
+        $this->db->select('users.id, users.first_name, users.middle_name, users.last_name, users.gender, users.birth_date, users.group_id, groups.description');
         $this->db->from($this->table);
         $this->db->join('groups', 'users.group_id = groups.id');
+        $this->db->where('active', true);
 
         $i = 0;
      
@@ -102,6 +103,15 @@ class User_model extends CI_Model {
 
         // modal info
         flashInfo('Change Password Successfully!');
+    }
+
+    public function delete($id)
+    {
+        if(!empty($id)) {
+            $this->db->set('active', false);
+            $this->db->where('id', $id);
+            $this->db->update('users');
+        }
     }
  
 }
