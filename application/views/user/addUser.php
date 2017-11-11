@@ -1,4 +1,11 @@
 
+<?php 
+  
+    // echo '<pre>';
+    //   var_dump($this->session->userdata);
+    // echo '</pre>';
+  
+ ?>
 
 
 <div class="container">
@@ -30,13 +37,13 @@
             <div class="form-group">
               <label for="mname" class="col-lg-2 control-label">Middle Name</label>
               <div class="col-lg-4">
-                <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name">
+                <input value="<?= set_value('mname'); ?>" type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name">
               </div>
             </div>
             <div class="form-group">
               <label for="lname" class="col-lg-2 control-label">Last Name</label>
               <div class="col-lg-4">
-                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+                <input value="<?= set_value('lname'); ?>" type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
               </div>
             </div>
               
@@ -52,7 +59,7 @@
               <div class="col-lg-2">
                    <select class="form-control" id="gender" name="gender">
                     <option value="M">Male</option>
-                    <option value="F">Female</option>
+                    <option <?php set_dropdown('gender', 'F'); ?> value="F">Female</option>
                   </select>
               </div>
             </div>
@@ -60,7 +67,7 @@
             <div class="form-group">
               <label for="uname" class="col-lg-2 control-label">User Name</label>
               <div class="col-lg-3">
-                <input type="text" class="form-control" id="uname" name="uname" placeholder="User Name">
+                <input value="<?= set_value('uname'); ?>" type="text" class="form-control" id="uname" name="uname" placeholder="User Name">
               </div>
             </div>
 

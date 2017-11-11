@@ -128,31 +128,33 @@ class User extends CI_Controller {
         $password = md5('password');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('error', validation_errors());
-            redirect($request);
+            $page = 'user/addUser';
+            $this->load->view('template', compact('page'));
         }else{
             $exist = $this->user->checkUsername($username);
 
             if ($exist) {
                 $this->session->set_flashdata('info', 'The Username is already in used.');
-                redirect($request);
-            }
+                $page = 'user/addUser';
+                $this->load->view('template', compact('page'));
+            }else{
+                // success
+                $data = compact(
+                    'first_name',
+                    'middle_name',
+                    'last_name',
+                    'birth_date',
+                    'gender',
+                    'username',
+                    'password'
+                );
 
-            // success
-            $data = compact(
-                'first_name',
-                'middle_name',
-                'last_name',
-                'birth_date',
-                'gender',
-                'username',
-                'password'
-            );
-
-            if ($this->user->insert($data)){
-                flashInfo("New User Added Successfully!");
-                redirect('users');
+                if ($this->user->insert($data)){
+                    flashInfo("New User Added Successfully!");
+                    redirect('users');
+                }
             }
+            
         }
 
 
