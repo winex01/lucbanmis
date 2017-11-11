@@ -22,6 +22,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Subject ID</th>
                     <th>Subject Code</th>
                     <th>Descriptions</th>
                     <th>Action</th>

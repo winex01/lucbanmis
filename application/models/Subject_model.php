@@ -3,37 +3,90 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 class Subject_model extends CI_Model {
 
+
+
+    var $table = 'subjects';
+    
+
  
-    public function addSubject($subcode, $subdes)
+    public function addSubject($subcode, $subdes, $status)
     {
         
-        $sql = "INSERT INTO subjects (subcode, descriptions) VALUES (".$this->db->escape($subcode).", ".$this->db->escape($subdes).")";
+        $sql = "INSERT INTO subjects (subcode, descriptions, status) VALUES (".$this->db->escape($subcode).", ".$this->db->escape($subdes).", ".$this->db->escape($status).")";
         $this->db->query($sql);
         return $this->db->affected_rows();
     }
 
 
+ 
+    public function deleteSubject($id)
+    {
+        
+        $this->db->set('status', 'inactive');
+        $this->db->where('id', $id);
+        $this->db->update('subjects'); // gives UPDATE mytable SET field = field+1 WHERE id = 2
+
+        return $this->db;
+
+    }
 
 
-    var $table = 'subjects';
-    
+      public function editSubject($id, $subcode, $subdes)
+    {
+        $data = array(
+        'subcode' => $subcode,
+        'descriptions' => $subdes
+        );
+
+        $this->db->where('id', $id);
+        $this->db->update('subjects', $data);
+        
+        return $this->db;
+    }
+
+
+
+
+    public function viewSubject($id)
+    {
+        //$query = $this->db->get_where('subjects', array('id' => $id));
+        $this->db->where('id =', $id);
+        $query = $this->db->get($this->table);
+        if($query->num_rows() > 0)
+        {
+            return $query->row();
+
+        }else{
+            return false;
+        }
+    }
+
+
     var $column_order = array(
             null, 
+            'id',
             'subcode',
             'descriptions'
+      
     ); //set column field database for datatable orderable
     
     var $column_search = array(
+            'id',
             'subcode',
             'descriptions'
+        
     ); //set column field database for datatable searchable 
     
     var $order = array('id' => 'asc'); // default order 
  
     private function _get_datatables_query()
     {
-         
+        $status = 'active';
+        $this->db->where('status =', $status);
         $this->db->from($this->table);
+
+        //$status = 'active';
+        //$this->db->from_where('subjects', array('status' => $status));
 
         $i = 0;
      

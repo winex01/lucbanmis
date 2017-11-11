@@ -19,6 +19,9 @@ $route['addStudent'] = 'student/addStudent';
 $route['students']   = 'student/students';
 
 //subjects
+$route['deleteSubject'] = 'subject/deleteSubject';
+$route['editSubject'] = 'subject/editSubject';
+$route['editSubjectPage'] = 'subject/editSubjectPage';
 $route['addNewSubject'] = 'subject/addNewSubject';
 $route['addSubjectPage'] = 'subject/addSubjectPage';
 $route['subjects'] = 'subject/subjects';

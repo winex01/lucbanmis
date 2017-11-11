@@ -16,6 +16,41 @@ class Subject extends CI_Controller {
 	}
 
 
+	public function deleteSubject($id='')
+	{
+		$id = $this->input->get('id');
+		$this->subject->deleteSubject($id);
+		flashInfo("Subject Deleted Successfully!");
+		$page = 'subject/subjects';
+		$this->load->view('template',  compact('page'));
+
+	}
+
+
+	public function editSubjectPage($id='')
+	{
+		$id = $this->input->get('id');
+		$data['sub'] = $this->subject->viewSubject($id);
+/*		$page = 'subject/editSubject';
+		$this->load->view('template', compact('page'));*/
+ 
+		$this->load->view('templates/header');
+		$this->load->view('subject/editSubject', $data);
+	    $this->load->view('templates/footer');
+	}
+
+	public function editSubject()
+	{
+		$id = $this->input->post('id');
+		$scode = $this->input->post('scode');
+		$subdes = $this->input->post('subdes');
+		$this->subject->editSubject($id, $scode, $subdes);
+		flashInfo("Subject Edited Successfully!");
+		$page = 'subject/Subjects';
+		$this->load->view('template', compact('page'));
+	}
+ 	 	
+
 	public function addSubjectPage()
 	{
 		$page = 'subject/addSubject';
@@ -26,7 +61,8 @@ class Subject extends CI_Controller {
 	{	
 		$scode = $this->input->post('scode');
 		$subdes = $this->input->post('subdes');
-		$this->subject->addSubject($scode, $subdes);
+		$status = 'active';
+		$this->subject->addSubject($scode, $subdes, $status);
 		flashInfo("New Subject Added Successfully!");
 		$page = 'subject/subjects';
 		$this->load->view('template', compact('page'));
@@ -42,16 +78,17 @@ class Subject extends CI_Controller {
             $no++;
             $row = array();
             $row[] = $no;
+            $row[] = $subject->id;
             $row[] = $subject->subcode;
             $row[] = $subject->descriptions;
             $row[] = '
-            			<button type="button" class="btn btn-default btn-warning btn-sm">
+            			<a href="editSubjectPage?id='.$subject->id.'"><button type="button" class="btn btn-default btn-warning btn-sm">
 						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-						</button>
+						</button></a>
 
-		            	<button type="button" class="btn btn-default btn-danger btn-sm">
+		            	<a href="deleteSubject?id='.$subject->id.'"><button type="button" class="btn btn-default btn-danger btn-sm">
 						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</button>
+						</button></a>
             		 ';
  
             $data[] = $row;
