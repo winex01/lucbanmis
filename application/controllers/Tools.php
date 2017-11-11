@@ -83,10 +83,20 @@ class Tools extends CI_Controller {
         $this->make_seed_file($name);
     }
 
-    public function seed($name) {
+    private function seedAll()
+    {
         $seeder = new Seeder();
+        $seeder->call('GroupsSeeder');
+        $seeder->call('UsersSeeder');
+    }
 
-        $seeder->call($name);
+    public function seed($name) {
+        if($name == 'all') {
+            $this->seedAll();
+        }else{
+            $seeder = new Seeder();
+            $seeder->call($name);
+        }
     }
 
     protected function make_migration_file($name) {
