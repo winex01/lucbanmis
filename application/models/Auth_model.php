@@ -17,7 +17,8 @@ class Auth_model extends CI_Model {
     			INNER JOIN groups
     			ON users.group_id = groups.id 
     			WHERE username = ?
-    			AND password = ? 
+    			AND password = ?
+                AND active 
     			LIMIT 1", [$username, md5($password)]
     	);
 
