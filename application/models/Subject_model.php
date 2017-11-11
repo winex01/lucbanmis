@@ -9,10 +9,10 @@ class Subject_model extends CI_Model {
     
 
  
-    public function addSubject($subcode, $subdes, $status)
+    public function addSubject($subcode, $subdes, $active)
     {
         
-        $sql = "INSERT INTO subjects (subcode, descriptions, status) VALUES (".$this->db->escape($subcode).", ".$this->db->escape($subdes).", ".$this->db->escape($status).")";
+        $sql = "INSERT INTO subjects (subcode, descriptions, active) VALUES (".$this->db->escape($subcode).", ".$this->db->escape($subdes).", ".$this->db->escape($active).")";
         $this->db->query($sql);
         return $this->db->affected_rows();
     }
@@ -22,7 +22,7 @@ class Subject_model extends CI_Model {
     public function deleteSubject($id)
     {
         
-        $this->db->set('status', 'inactive');
+        $this->db->set('active', false);
         $this->db->where('id', $id);
         $this->db->update('subjects'); // gives UPDATE mytable SET field = field+1 WHERE id = 2
 
@@ -81,12 +81,12 @@ class Subject_model extends CI_Model {
  
     private function _get_datatables_query()
     {
-        $status = 'active';
-        $this->db->where('status =', $status);
+        $active = true;
+        $this->db->where('active =', $active);
         $this->db->from($this->table);
 
-        //$status = 'active';
-        //$this->db->from_where('subjects', array('status' => $status));
+        //$active = 'active';
+        //$this->db->from_where('subjects', array('active' => $active));
 
         $i = 0;
      

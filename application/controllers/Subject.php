@@ -61,7 +61,7 @@ class Subject extends CI_Controller {
 	{	
 		$scode = $this->input->post('scode');
 		$subdes = $this->input->post('subdes');
-		$status = 'active';
+		$status = true;
 		$this->subject->addSubject($scode, $subdes, $status);
 		flashInfo("New Subject Added Successfully!");
 		$page = 'subject/subjects';
