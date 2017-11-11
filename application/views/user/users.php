@@ -13,7 +13,9 @@
         </ol>
 
       <?php if($this->group->accessAddUser()): ?>
-        <a href="addUser" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New User</a>
+        <a href="addUser" class="btn btn-success"><i class="ion ion-ios-plus"> </i>
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        New User</a>
       <?php endif; ?> 
       <br>
       <br>
