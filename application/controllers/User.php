@@ -38,11 +38,14 @@ class User extends CI_Controller {
             $row[] = $user->gender;
             $row[] = date('M. d Y', strtotime($user->birth_date));
             $row[] = ucfirst($user->description);
-            $row[] = '
-            			<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
-						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-						</button>
-            		 '.confirmDelete($user->id, 'deleteUser');
+            			
+            $btnEdit = '<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
+                          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>';
+            $btnState = $user->id == 1 && strtolower($user->first_name) == 'administrator' ? 'disabled' : '';
+            $action = $btnEdit.' '.confirmDelete($user->id, 'deleteUser', $btnState);
+            $row[] = $action;
+
  
             $data[] = $row;
         }
