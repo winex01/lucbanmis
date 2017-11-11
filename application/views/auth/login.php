@@ -28,13 +28,8 @@
     </div>
     <div class="panel-body">
 
-        <?php if(validation_errors() || $this->session->flashdata('info') ): ?>
-          <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <?= validation_errors(); ?>
-            <?= $this->session->flashdata('info'); ?>
-          </div>
-        <?php endif; ?>
+
+        <?php $this->load->view('flash/validationErrors'); ?>
 
         <form class="form-horizontal" method="POST" action="login">
           <?php csrf(); ?>
