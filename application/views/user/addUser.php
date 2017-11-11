@@ -3,106 +3,76 @@
 
 <div class="container">
   
-  <ol class="breadcrumb">
-    <li>
-      <a href="dashboard">Dashboard</a>
-    </li>
-    <li class="active">Add User</li>
-  </ol>
-
-
   <div class="panel panel-default">
     <div class="panel-body">
-      
-        <form class="form-horizontal">
+  
+      <ol class="breadcrumb">
+        <li>
+          <a href="dashboard">Dashboard</a>
+        </li>
+        <li class="active">Add User</li>
+      </ol>
+
+        <?php $this->load->view('flash/validationErrors'); ?>
+
+        <form class="form-horizontal" method="POST" action="insertUser">
+          <?php csrf(); ?>
+          <?php currentURI(); ?>
+
           <fieldset>
             <legend>Add New User</legend>
             <div class="form-group">
               <label for="fname" class="col-lg-2 control-label">First Name</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="fname" placeholder="First Name">
+              <div class="col-lg-4">
+                <input value="<?= set_value('fname'); ?>" type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
               </div>
             </div>
             <div class="form-group">
               <label for="mname" class="col-lg-2 control-label">Middle Name</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="mname" placeholder="Middle Name">
+              <div class="col-lg-4">
+                <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name">
               </div>
             </div>
             <div class="form-group">
               <label for="lname" class="col-lg-2 control-label">Last Name</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" id="lname" placeholder="Last Name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="gender" class="col-lg-2 control-label">Gender</label>
-              <div class="col-lg-10">
-                <div class="radio">
-                <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Male">Male
-                  </label>
-                  <label>
-                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="Female">Female
-                  </label>
-                </div>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
               </div>
             </div>
               
             <div class="form-group">
-              <label for="Year" class="col-lg-2 control-label">Birth Date</label>
-              <div class="row">
-              <div class="col-sm-3">
-                <select class="form-control" id="month">
-                  <option value="">Select Month</option>
-                  <option value="janauary">January</option>
-                  <option value="february">February</option>
-                  <option value="march">March</option>
-                </select>
-              </div>
-                    <div class="col-sm-2">
-                <select class="form-control" id="day">
-                  <option value="">Select Day</option>
-                  <?php
-                  $end = 31;
-                  for($i=1; $i<$end; $i++){
-                    echo '<option value="'.$i.'">'.$i.'</option>';
-                    }?>
-                </select>
-              </div>
-                    <div class="col-sm-3">
-                <select class="form-control" id="year">
-                  <option value="">Select Year</option>
-                   <?php
-                  $firstYear = (int)date('Y') - 15;
-                  $lastYear = $firstYear + 20;
-                  for($i=$firstYear;$i<=$lastYear;$i++)
-                  {
-                      echo '<option value='.$i.'>'.$i.'</option>';
-                  }?>
-                </select>
-              </div>
+              <label for="birthdate" class="col-lg-2 control-label">Birthdate</label>
+              <div class="col-lg-2">
+                <input type="date" class="form-control" id="birthdate" name="birthdate">
               </div>
             </div>
-
 
             <div class="form-group">
-              <label for="userName" class="col-lg-2 control-label">User Name</label>
-              <div class="col-lg-4">
-                <input type="text" class="form-control" id="userName" placeholder="User Name">
-              </div>
-              <label for="userPass" class="col-lg-2 control-label">Password</label>
-              <div class="col-lg-4">
-                <input type="Password" class="form-control" id="userPass" placeholder="Password">
+              <label for="gender" class="col-lg-2 control-label">Gender</label>
+              <div class="col-lg-2">
+                   <select class="form-control" id="gender" name="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                  </select>
               </div>
             </div>
 
+            <div class="form-group">
+              <label for="uname" class="col-lg-2 control-label">User Name</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="User Name">
+              </div>
+            </div>
 
 
             <div class="form-group">
               <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default"><i class="ion ion-android-cancel"> </i> Cancel</button>
-                <button type="submit" class="btn btn-primary"><i class="ion ion-android-checkbox-outline"> </i> Submit</butto>
+                <a href="users" class="btn btn-default"><i class="ion ion-android-cancel"> </i> Cancel
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </a>
+                <button type="submit" class="btn btn-primary"><i class="ion ion-android-checkbox-outline"> </i> Submit
+                  <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                </butto>
               </div>
             </div>
           </fieldset>

@@ -92,7 +92,7 @@ class User_model extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    public function insert($password)
+    public function changePassword($password)
     {
         $this->db->set('password', md5($password));
         $this->db->where('id', $this->auth->id());
@@ -113,5 +113,25 @@ class User_model extends CI_Model {
             $this->db->update('users');
         }
     }
+
+    public function checkUsername($username)
+    {
+        $this->db->select('*');
+        $this->db->where('username', $username);
+        $result = $this->db->get('users');
+
+        if ($result->num_rows() > 0){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public function insert($data)
+    {   
+        return $this->db->insert('users', $data);
+    }
+
  
 }

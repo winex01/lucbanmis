@@ -89,7 +89,7 @@ class User extends CI_Controller {
             $this->session->set_flashdata('error', 'The Current Password field is Incorrect.');
         }else{
             // validation success
-            $this->user->insert($password);
+            $this->user->changePassword($password);
         }
 
         redirect($requestFrom);    
@@ -108,5 +108,57 @@ class User extends CI_Controller {
         redirect($request);
 
     }
+
+    public function insert()
+    {
+        $this->form_validation->set_rules('fname', 'First Name', 'required');
+        $this->form_validation->set_rules('mname', 'Middle Name', 'required');   
+        $this->form_validation->set_rules('lname', 'Last Name', 'required');   
+        $this->form_validation->set_rules('birthdate', 'Birthdate', 'required');   
+        $this->form_validation->set_rules('gender', 'Gender', 'required'); #not neccessary
+        $this->form_validation->set_rules('uname', 'Username', 'required'); 
+
+        $request = $this->input->post('request');
+        $first_name = ucwords($this->input->post('fname'));
+        $middle_name = ucwords($this->input->post('mname'));
+        $last_name = ucwords($this->input->post('lname'));
+        $birth_date = $this->input->post('birthdate');
+        $gender = $this->input->post('gender');
+        $username = $this->input->post('uname');
+        $password = md5('password');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect($request);
+        }else{
+            $exist = $this->user->checkUsername($username);
+
+            if ($exist) {
+                $this->session->set_flashdata('info', 'The Username is already in used.');
+                redirect($request);
+            }
+
+            // success
+            $data = compact(
+                'first_name',
+                'middle_name',
+                'last_name',
+                'birth_date',
+                'gender',
+                'username',
+                'password'
+            );
+
+            if ($this->user->insert($data)){
+                flashInfo("New User Added Successfully!");
+                redirect('users');
+            }
+        }
+
+
+
+    }
+
+
 
 }

@@ -91,3 +91,17 @@ if ( ! function_exists('confirmDelete'))
                 </button>';        
     }   
 }
+
+// set select dropdown
+if ( ! function_exists('set_dropdown'))
+{
+    function set_dropdown($name, $value)
+    {
+         $ci =& get_instance();
+         
+         echo set_value($name) == $value ? 'selected' : '';
+                
+    }   
+}
+
+

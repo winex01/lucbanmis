@@ -14,6 +14,7 @@ $route['users']          = 'user/users';
 $route['usersList']      = 'user/ajax_list';
 $route['changePassword'] = 'user/changePassword';
 $route['deleteUser']     = 'user/delete';
+$route['insertUser']     = 'user/insert';
 
 // students
 $route['addStudent'] = 'student/addStudent';
