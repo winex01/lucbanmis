@@ -45,21 +45,30 @@ class Subject_model extends CI_Model {
     }
 
 
+  public function checkUser($id)
+    {
+        $this->db->select('*');
+        $this->db->where('id', $id);
+         $this->db->where('active', true);
+        $result = $this->db->get($this->table);
 
+        if($result->num_rows() > 0) {
+            return true;
+        }
+
+        return false;
+    }
 
     public function viewSubject($id)
     {
-        //$query = $this->db->get_where('subjects', array('id' => $id));
-        $this->db->where('id =', $id);
-        $query = $this->db->get($this->table);
-        if($query->num_rows() > 0)
-        {
-            return $query->row();
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('id', $id);
 
-        }else{
-            return false;
-        }
+        return $this->db->get()->row_array();
     }
+
+
 
 
     var $column_order = array(
