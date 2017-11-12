@@ -17,6 +17,7 @@
 
           <form class="form-horizontal" method="post" action="<?= base_url('addNewStudent') ?>">
             <?php csrf(); ?>
+            <?php currentURI(); ?>
             <fieldset>
               <legend>Add Update Student Record</legend>
               <div class="form-group">

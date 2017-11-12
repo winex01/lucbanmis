@@ -18,14 +18,13 @@ class Student_model extends CI_Model {
     }
 
 
- 
-    public function deleteSubject($id)
+
+    public function deleteStudent($id)
     {
         
-        $this->db->set('active', false);
         $this->db->where('id', $id);
-        $this->db->update('subjects'); // gives UPDATE mytable SET field = field+1 WHERE id = 2
-
+        $this->db->delete($this->table);
+        
         return $this->db;
 
     }
@@ -46,19 +45,28 @@ class Student_model extends CI_Model {
 
 
 
-
-    public function viewSubject($id)
+  public function checkUser($id)
     {
-        $this->db->where('id =', $id);
-        $query = $this->db->get($this->table);
-        if($query->num_rows() > 0)
-        {
-            return $query->row();
+        $this->db->select('*');
+        $this->db->where('id', $id);
+        $result = $this->db->get($this->table);
 
-        }else{
-            return false;
+        if($result->num_rows() > 0) {
+            return true;
         }
+
+        return false;
     }
+
+    public function viewStudent($id)
+    {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('id', $id);
+
+        return $this->db->get()->row_array();
+    }
+
 
 
     var $column_order = array(

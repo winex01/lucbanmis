@@ -28,16 +28,19 @@ class Student extends CI_Controller {
 	}
 
 
-	public function editStudentPage($id='')
-	{
-		$id = $this->input->get('id');
-		$vars['stud'] = $this->Student->viewStudent($id);
-		$this->load->view('templates/header');
-		$this->load->view('student/editStudent');
-		$this->load->view('templates/footer');
-		}
+
+    public function editStudentPage($id='')
+    {
+
+		
+		 
+			$page = 'student/editStudent';
+	
+			$this->load->view('template', compact('page'));
+	}
 
 
+ 
 	public function editStudent($id='')
 	{
 		$id = $this->input->post('id');
@@ -82,33 +85,8 @@ class Student extends CI_Controller {
             $row[] = $Student->mname;
             $row[] = $Student->lname;
 
-            $btnEdit = ' <a href="editStudentPage?id='.$Student->id.'"><button type="button" class="btn btn-default 	btn-warning btn-sm">
-						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-						</button></a>';
-
-			$btnPrint = ' <a href="?id='.$Student->id.'"><button type="button" class="btn btn-default btn-success btn-sm">
-						  <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
-						</button></a>';
-
-			$btnDelete = ' <a href="deleteStudent?id='.$Student->id.'"><button type="button" class="btn btn-default btn-danger btn-sm">
-						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</button></a>';
-
-			// default action
-            $action = '';
-
-            if ($this->group->accessEditStudent()) {
-            	$action .= $btnEdit;
-            }
-
-            if ($this->group->accessPrintStudent()) {
-            	$action .= $btnPrint;
-            }
-
-            if ($this->group->accessDeleteStudent()) {
-            	$action .= $btnDelete;
-            }
-
+            $action = btnEdit($Student->id, 'editStudentPage').' '.confirmDelete($Student->id, 'deleteStudent');
+          
             $row[] = $action;
  
             $data[] = $row;
