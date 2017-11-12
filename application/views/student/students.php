@@ -7,13 +7,15 @@
        
         <ol class="breadcrumb">
           <li>
-            <a href="dashboard">Dashboard</a>
+            <a href="<?= base_url('dashboard') ?>">Dashboard</a>
           </li>
-          <li class="active">View Student</li>
+          <li class="active">View Students</li>
         </ol>
 
 
-        <a href="addStudentPage" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New Student</a>
+        <a href="<?= base_url('addStudentPage') ?>" class="btn btn-success"><i class="ion ion-ios-plus"> </i> 
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+         New Student</a>
 
       <br>
       <br>

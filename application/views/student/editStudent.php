@@ -6,7 +6,7 @@
 
     <ol class="breadcrumb">
       <li>
-        <a href="dashboard">Dashboard</a>
+        <a href="<?= base_url('dashboard') ?>">Dashboard</a>
       </li>
       <li class="active">Update Student</li>
     </ol>
@@ -15,7 +15,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
 
-          <form class="form-horizontal" method="post" action="addNewStudent">
+          <form class="form-horizontal" method="post" action="<?= base_url('addNewStudent') ?>">
             <?php csrf(); ?>
             <fieldset>
               <legend>Add Update Student Record</legend>
