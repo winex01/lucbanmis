@@ -54,7 +54,9 @@ class UsersSeeder extends Seeder {
                 'birth_date' => $this->faker->dateTimeThisCentury->format('Y-m-d'),
                 'username' => $this->faker->unique()->userName,
                 'password' => md5('password'),
-                'group_id' => $this->faker->randomElement([1,2,3,4])
+                'group_id' => $this->faker->randomElement([1,2,3,4]),
+                'gender' => $this->faker->randomElement(['M', 'F'])
+
             );
 
             $this->db->insert($this->table, $data);

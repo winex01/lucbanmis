@@ -3,7 +3,7 @@
 <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="dashboard" class="navbar-brand">Lucban MIS</a>
+          <a href="<?= base_url('dashboard') ?>" class="navbar-brand">Lucban MIS</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -15,7 +15,7 @@
               
               <!-- dashboard -->
               <li class="<?php active('dashboard'); ?>">
-                <a href="dashboard"><i class="fa fa-phone text-green"></i> Dashboard</a>
+                <a href="<?= base_url('dashboard') ?>"><i class="fa fa-phone text-green"></i> Dashboard</a>
               </li>
          
 
@@ -26,11 +26,11 @@
                       <ul class="dropdown-menu" aria-labelledby="download">
                         
                         <?php if($this->group->accessViewUsers()): ?>
-                          <li class="<?php active('users'); ?>"><a href="users"><i class="ion ion-ios-search"> </i> View Users</a></li>
+                          <li class="<?php active('users'); ?>"><a href="<?= base_url('users') ?>"><i class="ion ion-ios-search"> </i> View Users</a></li>
                         <?php endif; ?>
                         
                         <?php if($this->group->accessAddUser()): ?>
-                          <li class="<?php active('addUser'); ?>"><a href="addUser"><i class="ion ion-ios-plus"> </i> Add User</a></li>
+                          <li class="<?php active('addUser'); ?>"><a href="<?= base_url('addUser'); ?>"><i class="ion ion-ios-plus"> </i> Add User</a></li>
                         <?php endif; ?>
                       
                       </ul>
@@ -45,11 +45,11 @@
                       <ul class="dropdown-menu" aria-labelledby="download">
 
                         <?php if($this->group->accessViewStudents()): ?>
-                          <li class="<?php active('students'); ?>"><a href="students"><i class="ion ion-ios-search"> </i> View Students</a></li>
+                          <li class="<?php active('students'); ?>"><a href="<?= base_url('students') ?>"><i class="ion ion-ios-search"> </i> View Students</a></li>
                         <?php endif; ?>
                       
                         <?php if($this->group->accessAddStudent()): ?>
-                          <li class="<?php active('addStudent'); ?>"><a href="addStudent"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
+                          <li class="<?php active('addStudent'); ?>"><a href="<?= base_url('addStudent') ?>"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
                         <?php endif; ?>
 
                       </ul>
@@ -64,11 +64,11 @@
                       <ul class="dropdown-menu" aria-labelledby="download">
 
                         <?php if($this->group->accessViewSubjects()): ?>
-                          <li class="<?php active('subjects'); ?>"><a href="subjects"><i class="ion ion-ios-search"> </i> View Subjects</a></li>
+                          <li class="<?php active('subjects'); ?>"><a href="<?= base_url('subjects') ?>"><i class="ion ion-ios-search"> </i> View Subjects</a></li>
                         <?php endif; ?>
                         
                         <?php if($this->group->accessAddSubject()): ?>
-                        <li class="<?php active('addSubject'); ?>"><a href="addSubject"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
+                        <li class="<?php active('addSubject'); ?>"><a href="<?= base_url('addSubject') ?>"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
                         <?php endif; ?>
 
                       </ul>

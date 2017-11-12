@@ -39,11 +39,9 @@ class User extends CI_Controller {
             $row[] = date('M. d Y', strtotime($user->birth_date));
             $row[] = ucfirst($user->description);
             			
-            $btnEdit = '<button type="button" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
-                          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                        </button>';
+            
             $btnState = $user->id == 1 && strtolower($user->first_name) == 'administrator' ? 'disabled' : '';
-            $action = $btnEdit.' '.confirmDelete($user->id, 'deleteUser', $btnState);
+            $action = btnEdit($user->id, 'editUser').' '.confirmDelete($user->id, 'deleteUser', $btnState);
             $row[] = $action;
 
  
@@ -157,10 +155,64 @@ class User extends CI_Controller {
             
         }
 
-
-
     }
 
+
+    public function edit($id)
+    {
+
+        // check if user nga e edit, is exist
+        if (!$this->user->checkUser($id)) {
+            redirect('users');
+        }
+
+        $user = $this->user->select($id);
+        
+        $page = 'user/editUser';
+        $vars = $user;
+        $this->load->view('template', compact('page', 'vars'));
+    }
+
+    public function update()
+    {
+        $this->form_validation->set_rules('fname', 'First Name', 'required');
+        $this->form_validation->set_rules('mname', 'Middle Name', 'required');   
+        $this->form_validation->set_rules('lname', 'Last Name', 'required');   
+        $this->form_validation->set_rules('birthdate', 'Birthdate', 'required');   
+        $this->form_validation->set_rules('gender', 'Gender', 'required'); #not neccessary
+
+        $request = $this->input->post('request');
+        $id = $this->input->post('id');
+
+        $first_name = ucwords($this->input->post('fname'));
+        $middle_name = ucwords($this->input->post('mname'));
+        $last_name = ucwords($this->input->post('lname'));
+        $birth_date = $this->input->post('birthdate');
+        $gender = $this->input->post('gender');
+        $username = $this->input->post('uname');
+
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('editUser/'.$id);
+        }
+
+
+        $data = compact(
+            'first_name',
+            'middle_name',
+            'last_name',
+            'birth_date',
+            'gender',
+            'username'
+        );
+        //update and save
+        if ($this->user->update($id, $data)) {
+            flashInfo($first_name .' '. $last_name .' Account updated Successfully!');
+            redirect('users');
+        } 
+
+    }
 
 
 }

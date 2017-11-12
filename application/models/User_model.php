@@ -133,5 +133,34 @@ class User_model extends CI_Model {
         return $this->db->insert('users', $data);
     }
 
+    public function checkUser($id)
+    {
+        $this->db->select('*');
+        $this->db->where('id', $id);
+        $result = $this->db->get('users');
+
+        if($result->num_rows() > 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function select($id)
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('id', $id);
+
+        return $this->db->get()->row_array();
+    }
+
  
+    public function update(int $id, array $data)
+    {
+        $this->db->set($data);
+        $this->db->where('id', $id);
+        return $this->db->update('users');
+    }
+
 }

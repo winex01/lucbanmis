@@ -9,12 +9,14 @@ $route['logout'] = 'auth/logout';
 $route['dashboard'] = 'dashboard/dashboards';
 
 // users
-$route['addUser']        = 'user/addUser';
-$route['users']          = 'user/users';
-$route['usersList']      = 'user/ajax_list';
-$route['changePassword'] = 'user/changePassword';
-$route['deleteUser']     = 'user/delete';
-$route['insertUser']     = 'user/insert';
+$route['addUser']         = 'user/addUser';
+$route['users']           = 'user/users';
+$route['usersList']       = 'user/ajax_list';
+$route['changePassword']  = 'user/changePassword';
+$route['deleteUser']      = 'user/delete';
+$route['insertUser']      = 'user/insert';
+$route['updateUser']	  = 'user/update';
+$route['editUser/(:num)'] = 'user/edit/$1';
 
 // students
 $route['addStudent'] = 'student/addStudent';
