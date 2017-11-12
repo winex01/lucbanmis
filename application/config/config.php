@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://lucbanmis.dev/';
-$config['base_url'] = 'http://45.77.240.212/lucbanmis/';
+$config['base_url'] = 'http://45.77.240.212/';
 
 /*
 |--------------------------------------------------------------------------
