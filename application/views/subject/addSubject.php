@@ -25,13 +25,13 @@
           <div class="form-group">
             <label for="scode" class="col-lg-2 control-label">Subject Code</label>
             <div class="col-lg-10">
-              <input name="scode" type="text" class="form-control" id="scode" placeholder="Subject Code">
+              <input name="scode" type="text" class="form-control" id="scode" placeholder="Subject Code" required>
             </div>
           </div>
           <div class="form-group">
             <label for="subdes" class="col-lg-2 control-label">Descriptions</label>
             <div class="col-lg-10">
-              <input name="subdes" type="text" class="form-control" id="subdes" placeholder="Descriptions">
+              <input name="subdes" type="text" class="form-control" id="subdes" placeholder="Descriptions" required>
             </div>
           </div>
 

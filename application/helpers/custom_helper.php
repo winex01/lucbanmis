@@ -111,7 +111,7 @@ if ( ! function_exists('btnEdit'))
     {
          $ci =& get_instance();
          
-        return '<a href="'.$url.'/'.$var.'" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
+        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-warning btn-sm" data-toggle="tooltip" title="Edit">
                   <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                 </a>';       
     }   

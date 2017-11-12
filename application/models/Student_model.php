@@ -29,6 +29,7 @@ class Student_model extends CI_Model {
 
     }
 
+ 
 
       public function editSubject($id, $subcode, $subdes)
     {

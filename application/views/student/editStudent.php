@@ -3,13 +3,17 @@
 
 <div class="container">
     
+ 
 
-    <ol class="breadcrumb">
-      <li>
-        <a href="<?= base_url('dashboard') ?>">Dashboard</a>
-      </li>
-      <li class="active">Update Student</li>
-    </ol>
+      <ol class="breadcrumb">
+    <li>
+      <a href="<?= base_url('dashboard') ?>">Dashboard</a>
+    </li>
+    <li>
+      <a href="<?= base_url('students') ?>">View Student</a>
+    </li>
+    <li class="active">Add Student</li>
+  </ol>
 
 
     <div class="panel panel-default">
@@ -18,33 +22,34 @@
           <form class="form-horizontal" method="post" action="<?= base_url('addNewStudent') ?>">
             <?php csrf(); ?>
             <?php currentURI(); ?>
+            
             <fieldset>
               <legend>Add Update Student Record</legend>
               <div class="form-group">
                 <label for="fname" class="col-lg-2 control-label">First Name</label>
                 <div class="col-lg-10">
-                  <input value="<?php echo $stud->id; ?>" type="hidden" class="form-control" name="fname" placeholder="First Name">
-                  <input value="<?php echo $stud->fname; ?>" type="text" class="form-control" name="fname" placeholder="First Name">
+                  <input value="<?php echo $id; ?>" type="hidden" class="form-control" name="fname" placeholder="First Name">
+                  <input value="<?php echo $fname; ?>" type="text" class="form-control" name="fname" placeholder="First Name">
                 </div>
               </div>
               <div class="form-group">
                 <label for="mname" class="col-lg-2 control-label">Middle Name</label>
                 <div class="col-lg-10">
-                  <input value="<?php echo $stud->mname; ?>" type="text" class="form-control" name="mname" placeholder="Middle Name">
+                  <input value="<?php echo $mname; ?>" type="text" class="form-control" name="mname" placeholder="Middle Name">
                 </div>
               </div>
               <div class="form-group">
                 <label for="lname" class="col-lg-2 control-label">Last Name</label>
                 <div class="col-lg-10">
-                  <input value="<?php echo $stud->lname; ?>" type="text" class="form-control" name="lname" ="lname" placeholder="Last Name">
+                  <input value="<?php echo $lname; ?>" type="text" class="form-control" name="lname" ="lname" placeholder="Last Name">
                 </div>
               </div>
               <div class="form-group">
                 <label for="gender" class="col-lg-2 control-label">Gender</label>
                 <div class="col-lg-10">
-                    <select name="gender">
+                    <select class="form-control" name="gender">
                       <option>
-                        <?php echo $stud->gender; ?>
+                        <?php echo $gender; ?>
                       </option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -60,7 +65,7 @@
                 <div class="row">
                 <div class="col-sm-3">
 
-                <input value="<?php echo $stud->bdate; ?>" type="date" class="form-control" name="bdate">
+                <input value="<?php echo $bdate; ?>" type="date" class="form-control" name="bdate">
 
                 </div>
               </div>

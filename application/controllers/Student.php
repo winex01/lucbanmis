@@ -21,28 +21,41 @@ class Student extends CI_Controller {
 		$page = 'student/students';
 		$this->load->view('template', compact('page'));
 	}
-
-
  
-	public function deleteStudent($id='')
-	{
-		$id = $this->input->get('id');
-		$this->Student->deleteStudent($id);
-		redirect('student/students');
 
-	}
+	 public function deleteStudent()
+    {
+        $id      = $this->input->post('id');
+        $request = $this->input->post('request');
+
+        if (!empty($id) && !empty($request)){
+            $this->Student->deleteStudent($id);
+		    flashInfo("Student Record Deleted Successfully!");
+        }
+
+        redirect($request);
+
+    }
+
+
 
 
 
     public function editStudentPage($id='')
     {
 
-		
-		 
-			$page = 'student/editStudent';
+		if (!$this->Student->checkUser($id)) {
+        redirect('students');
+        }
+
+	 
+		$stud = $this->Student->viewStudent($id);
+
+		$page = 'student/editStudent';
+		$vars = $stud;
+		$this->load->view('template', compact('page', 'vars'));
+ 	}
 	
-			$this->load->view('template', compact('page'));
-	}
 
 
  

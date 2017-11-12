@@ -5,10 +5,10 @@
 
   <ol class="breadcrumb">
     <li>
-      <a href="dashboard">Dashboard</a>
+      <a href="<?= base_url('dashboard') ?>">Dashboard</a>
     </li>
     <li>
-      <a href="subjects">View Subjects</a>
+      <a href="<?= base_url('subjects') ?>">View Subjects</a>
     </li>
     <li class="active">Add Subject</li>
   </ol>
