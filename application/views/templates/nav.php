@@ -49,7 +49,7 @@
                         <?php endif; ?>
                       
                         <?php if($this->group->accessAddStudent()): ?>
-                          <li class="<?php active('addStudent'); ?>"><a href="<?= base_url('addStudent') ?>"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
+                          <li class="<?php active('addStudent'); ?>"><a href="<?= base_url('addStudentPage') ?>"><i class="ion ion-ios-plus"> </i> Add Student</a></li>
                         <?php endif; ?>
 
                       </ul>
@@ -68,7 +68,7 @@
                         <?php endif; ?>
                         
                         <?php if($this->group->accessAddSubject()): ?>
-                        <li class="<?php active('addSubject'); ?>"><a href="<?= base_url('addSubject') ?>"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
+                        <li class="<?php active('addSubject'); ?>"><a href="<?= base_url('addSubjectPage') ?>"><i class="ion ion-ios-plus"> </i> Add Subject</a></li>
                         <?php endif; ?>
 
                       </ul>
