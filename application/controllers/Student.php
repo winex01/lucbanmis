@@ -9,9 +9,9 @@ class Student extends CI_Controller {
         parent::__construct();
         $this->load->model('Student_model','Student');
     
-        if (!$this->group->accessAddStudent()) {
-        	redirect('/');
-        }
+        // if (!$this->group->accessAddStudent()) {
+        // 	redirect('/');
+        // }
 
     }
 
