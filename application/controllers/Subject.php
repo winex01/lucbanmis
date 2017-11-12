@@ -7,6 +7,10 @@ class Subject extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Subject_model','subject');
+    
+        if (!$this->group->accessAddSubject()) {
+			redirect('/');
+		}
     }
 
 	public function subjects()
@@ -65,7 +69,7 @@ class Subject extends CI_Controller {
 	}
 
 	public function addNewSubject()
-	{	
+	{
 		$scode = $this->input->post('scode');
 		$subdes = $this->input->post('subdes');
 		$status = true;
