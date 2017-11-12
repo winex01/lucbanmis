@@ -19,8 +19,11 @@ $route['updateUser']	  = 'user/update';
 $route['editUser/(:num)'] = 'user/edit/$1';
 
 // students
-$route['addStudent'] = 'student/addStudent';
-$route['students']   = 'student/students';
+$route['editStudentPage']   = 'student/editStudentPage';
+$route['addNewStudent']   = 'student/addNewStudent';
+$route['addStudentPage'] = 'student/addStudentPage';
+$route['students']        = 'student/students';
+$route['studentsList']   = 'student/ajax_list';
 
 //subjects
 $route['deleteSubject']   = 'subject/deleteSubject';

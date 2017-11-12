@@ -16,6 +16,7 @@
 
 
 <?php $this->load->view('datatable/users'); ?>
+<?php $this->load->view('datatable/students'); ?>
 <?php $this->load->view('datatable/subjects'); ?>
 
 
