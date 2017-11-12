@@ -20,21 +20,33 @@ class Subject extends CI_Controller {
 	}
 
 
-	public function deleteSubject($id='')
-	{
-		$id = $this->input->get('id');
-		$this->subject->deleteSubject($id);
-		flashInfo("Subject Deleted Successfully!");
-		redirect('subject/subjects');
+    public function deleteSubject()
+    {
+        $id      = $this->input->post('id');
+        $request = $this->input->post('request');
 
-	}
+        if (!empty($id) && !empty($request)){
+            $this->subject->deleteSubject($id);
+		    flashInfo("Subject Deleted Successfully!");
+        }
+
+        redirect($request);
+
+    }
 
 
 	public function editSubjectPage($id='')
 	{
-		$id = $this->input->get('id');
-		$vars['sub'] = $this->subject->viewSubject($id);
+
+		if (!$this->subject->checkUser($id)) {
+        redirect('subjects');
+        }
+
+	 
+		$sub = $this->subject->viewSubject($id);
+
 		$page = 'subject/editSubject';
+		$vars = $sub;
 		$this->load->view('template', compact('page', 'vars'));
  	}
 
@@ -79,16 +91,10 @@ class Subject extends CI_Controller {
             $row[] = $subject->id;
             $row[] = $subject->subcode;
             $row[] = $subject->descriptions;
-            $row[] = '
-            			<a href="editSubjectPage?id='.$subject->id.'"><button type="button" class="btn btn-default btn-warning btn-sm">
-						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-						</button></a>
 
-		            	<a href="deleteSubject?id='.$subject->id.'"><button type="button" class="btn btn-default btn-danger btn-sm">
-						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</button></a>
-            		 ';
- 
+
+            $action = btnEdit($subject->id, 'editSubjectPage').' '.confirmDelete($subject->id, 'deleteSubject');
+            $row[] = $action;
             $data[] = $row;
         }
  

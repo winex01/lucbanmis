@@ -28,7 +28,7 @@ $route['studentsList']   = 'student/ajax_list';
 //subjects
 $route['deleteSubject']   = 'subject/deleteSubject';
 $route['editSubject']     = 'subject/editSubject';
-$route['editSubjectPage'] = 'subject/editSubjectPage';
+$route['editSubjectPage/(:num)'] = 'subject/editSubjectPage/$1';
 $route['addNewSubject']   = 'subject/addNewSubject';
 $route['addSubjectPage']  = 'subject/addSubjectPage';
 $route['subjects']        = 'subject/subjects';
