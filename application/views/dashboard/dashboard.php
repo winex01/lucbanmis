@@ -1,22 +1,25 @@
 
 <div class="container">
-	<h1>Dashboard</h1>
 
 
-	<?php 
+	<div class="panel panel-default">
+		<div class="panel-body">
+			
+			<ol class="breadcrumb">
+				<li class="active">Dashboard</li>
+			</ol>
 
-		echo '<pre>';
-			print_r($this->session->userdata('error'));
-		echo '</pre>';
+
+			<!-- boxes -->
+				<?php foreach($boxes as $box): ?>
+					<?= $box; ?>
+				<?php endforeach; ?>
+			<!-- / boxes -->
 
 
-	 ?>
 
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+	</div>
+	
 
 </div>

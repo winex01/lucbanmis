@@ -163,4 +163,15 @@ class User_model extends CI_Model {
         return $this->db->update('users');
     }
 
+    public function counts()
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where('active', true);
+
+        $result = $this->db->get();
+
+        return $result->num_rows();
+    }
+
 }

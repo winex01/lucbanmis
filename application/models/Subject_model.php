@@ -143,5 +143,16 @@ class Subject_model extends CI_Model {
         $this->db->from($this->table);
         return $this->db->count_all_results();
     }
+
+    public function counts()
+    {
+        $this->db->select('*');
+        $this->db->from('subjects');
+        $this->db->where('active', true);
+
+        $result = $this->db->get();
+
+        return $result->num_rows();
+    }
  
 }
