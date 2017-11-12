@@ -81,19 +81,35 @@ class Student extends CI_Controller {
             $row[] = $Student->fname;
             $row[] = $Student->mname;
             $row[] = $Student->lname;
-            $row[] = '
-            			<a href="editStudentPage?id='.$Student->id.'"><button type="button" class="btn btn-default btn-warning btn-sm">
+
+            $btnEdit = ' <a href="editStudentPage?id='.$Student->id.'"><button type="button" class="btn btn-default 	btn-warning btn-sm">
 						  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-						</button></a>
+						</button></a>';
 
-            			<a href="?id='.$Student->id.'"><button type="button" class="btn btn-default btn-success btn-sm">
+			$btnPrint = ' <a href="?id='.$Student->id.'"><button type="button" class="btn btn-default btn-success btn-sm">
 						  <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
-						</button></a>
+						</button></a>';
 
-		            	<a href="deleteStudent?id='.$Student->id.'"><button type="button" class="btn btn-default btn-danger btn-sm">
+			$btnDelete = ' <a href="deleteStudent?id='.$Student->id.'"><button type="button" class="btn btn-default btn-danger btn-sm">
 						  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-						</button></a>
-            		 ';
+						</button></a>';
+
+			// default action
+            $action = '';
+
+            if ($this->group->accessEditStudent()) {
+            	$action .= $btnEdit;
+            }
+
+            if ($this->group->accessPrintStudent()) {
+            	$action .= $btnPrint;
+            }
+
+            if ($this->group->accessDeleteStudent()) {
+            	$action .= $btnDelete;
+            }
+
+            $row[] = $action;
  
             $data[] = $row;
         }

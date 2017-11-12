@@ -95,7 +95,47 @@ class Group_model extends CI_Model {
     {
         $access = false;
         switch ($this->auth->groupDescription()) {
-            case 'cashier':
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
+    }
+
+    public function accessEditStudent()
+    {
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
+    }
+
+    public function accessPrintStudent()
+    {
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'administrator':
+            case 'registrar':
+                    $access = true;
+                break;
+            
+        }
+
+        return $access;
+    }
+
+    public function accessDeleteStudent()
+    {
+        $access = false;
+        switch ($this->auth->groupDescription()) {
+            case 'registrar':
                     $access = true;
                 break;
             

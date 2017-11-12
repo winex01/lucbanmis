@@ -13,9 +13,11 @@
         </ol>
 
 
-        <a href="<?= base_url('addStudentPage') ?>" class="btn btn-success"><i class="ion ion-ios-plus"> </i> 
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-         New Student</a>
+        <?php if ($this->group->accessAddStudent()): ?>
+          <a href="<?= base_url('addStudentPage') ?>" class="btn btn-success"><i class="ion ion-ios-plus"> </i> 
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+           New Student</a>
+        <?php endif; ?>
 
       <br>
       <br>
