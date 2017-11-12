@@ -31,7 +31,7 @@
 
         <?php $this->load->view('flash/validationErrors'); ?>
 
-        <form class="form-horizontal" method="POST" action="<?= base_url('login') ?>">
+        <form class="form-horizontal" method="POST" action="<?= base_url('index.php/login') ?>">
           <?php csrf(); ?>
           <div class="form-group">
             <label class="control-label col-sm-2" for="username">Username:</label>
