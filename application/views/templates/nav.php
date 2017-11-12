@@ -89,7 +89,7 @@
                 <li><a data-toggle="modal" href='#modal-change-password'><i class="ion ion-android-refresh"> </i> 
                 <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                 Change Password</a></li>
-                <li><a href="logout"><i class="ion ion-log-out"> </i><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+                <li><a href="<?= base_url('logout') ?>"><i class="ion ion-log-out"> </i><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
               </ul>
             </li>
           </ul>
