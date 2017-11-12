@@ -1,68 +1,43 @@
 
-
 <div class="container">
   
 
-  <ol class="breadcrumb">
-    <li>
-      <a href="dashboard">Dashboard</a>
-    </li>
-    <li class="active">View Students</li>
-  </ol>
-
-
-  <a href="addStudent" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New Student</a>
-  <br>
-  <br>
-
-  <table id="myTable-student" class="table table-striped table-hover ">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>101</td>
-        <td>Charles</td>
-        <td>Null</td>
-        <td>Wren</td>
-        <td>
-          <button class="btn btn-info btn-sm">Subjects</button>
-          <button class="btn btn-success btn-sm">Grades</button>
-          <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>102</td>
-        <td>Chris Jim</td>
-        <td>Sabosido</td>
-        <td>Egot</td>
-        <td>
-          <button class="btn btn-info btn-sm">Subjects</button>
-          <button class="btn btn-success btn-sm">Grades</button>
-          <button class="btn btn-success btn-sm" onclick="printreport(101)"><i class="ion ion-ios-printer-outline"> </i> Print</button>
-          <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
-        </td>
-      </tr>
-      <tr class="info">
-        <td>103</td>
-        <td>Winnie</td>
-        <td>Null</td>
-        <td>Damayo</td>
-        <td>
-          <button class="btn btn-info btn-sm">Subjects</button>
-          <button class="btn btn-success btn-sm">Grades</button>
-          <button class="btn btn-danger btn-sm"><i class="ion ion-ios-trash"> </i> Delete</button>
-        </td>
-      </tr>
+  <div class="panel panel-default">
+     <div class="panel-body">
        
-    </tbody>
-  </table>
+        <ol class="breadcrumb">
+          <li>
+            <a href="dashboard">Dashboard</a>
+          </li>
+          <li class="active">View Student</li>
+        </ol>
 
 
-</div> 
+        <a href="addStudentPage" class="btn btn-success"><i class="ion ion-ios-plus"> </i> Add New Student</a>
+
+      <br>
+      <br>
+
+        <table id="students-table" class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+     </div>
+   </div> 
+
+</div>  
+
+
+
+

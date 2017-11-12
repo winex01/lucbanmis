@@ -16,8 +16,11 @@ $route['changePassword'] = 'user/changePassword';
 $route['deleteUser']     = 'user/delete';
 
 // students
-$route['addStudent'] = 'student/addStudent';
-$route['students']   = 'student/students';
+$route['editStudentPage']   = 'student/editStudentPage';
+$route['addNewStudent']   = 'student/addNewStudent';
+$route['addStudentPage'] = 'student/addStudentPage';
+$route['students']        = 'student/students';
+$route['studentsList']   = 'student/ajax_list';
 
 //subjects
 $route['deleteSubject']   = 'subject/deleteSubject';

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?= base_url('public/css/bootstrap.css'); ?>" media="screen">
     <link href="<?= base_url('public/css/jquery.dataTables.min.css'); ?>" rel="stylesheet">
 
+ 
 
   </head>
   <body>

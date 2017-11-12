@@ -21,8 +21,7 @@ class Subject extends CI_Controller {
 		$id = $this->input->get('id');
 		$this->subject->deleteSubject($id);
 		flashInfo("Subject Deleted Successfully!");
-		$page = 'subject/subjects';
-		$this->load->view('template',  compact('page'));
+		redirect('subject/subjects');
 
 	}
 
@@ -30,24 +29,20 @@ class Subject extends CI_Controller {
 	public function editSubjectPage($id='')
 	{
 		$id = $this->input->get('id');
-		$data['sub'] = $this->subject->viewSubject($id);
-/*		$page = 'subject/editSubject';
-		$this->load->view('template', compact('page'));*/
- 
-		$this->load->view('templates/header');
-		$this->load->view('subject/editSubject', $data);
-	    $this->load->view('templates/footer');
-	}
+		$vars['sub'] = $this->subject->viewSubject($id);
+		$page = 'subject/editSubject';
+		$this->load->view('template', compact('page', 'vars'));
+ 	}
 
-	public function editSubject()
+
+	public function editSubject($id='')
 	{
 		$id = $this->input->post('id');
 		$scode = $this->input->post('scode');
 		$subdes = $this->input->post('subdes');
 		$this->subject->editSubject($id, $scode, $subdes);
-		flashInfo("Subject Edited Successfully!");
-		$page = 'subject/Subjects';
-		$this->load->view('template', compact('page'));
+		flashInfo("Subject Updated Successfully!");
+		redirect('subject/subjects');
 	}
  	 	
 
@@ -64,8 +59,7 @@ class Subject extends CI_Controller {
 		$status = true;
 		$this->subject->addSubject($scode, $subdes, $status);
 		flashInfo("New Subject Added Successfully!");
-		$page = 'subject/subjects';
-		$this->load->view('template', compact('page'));
+		redirect('student/students');
 
 	}
 

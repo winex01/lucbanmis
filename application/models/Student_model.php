@@ -1,18 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Subject_model extends CI_Model {
+class Student_model extends CI_Model {
 
 
 
-    var $table = 'subjects';
+    var $table = 'students';
     
 
  
-    public function addSubject($subcode, $subdes, $active)
+    public function addStudent($fname, $mname, $lname, $gender, $bdate)
     {
         
-        $sql = "INSERT INTO subjects (subcode, descriptions, active) VALUES (".$this->db->escape($subcode).", ".$this->db->escape($subdes).", ".$this->db->escape($active).")";
+        $sql = "INSERT INTO students (fname, mname, lname, gender, bdate) VALUES (".$this->db->escape($fname).", ".$this->db->escape($mname).", ".$this->db->escape($lname).", ".$this->db->escape($gender).", ".$this->db->escape($bdate).")";
         $this->db->query($sql);
         return $this->db->affected_rows();
     }
@@ -49,7 +49,6 @@ class Subject_model extends CI_Model {
 
     public function viewSubject($id)
     {
-        //$query = $this->db->get_where('subjects', array('id' => $id));
         $this->db->where('id =', $id);
         $query = $this->db->get($this->table);
         if($query->num_rows() > 0)
@@ -65,15 +64,17 @@ class Subject_model extends CI_Model {
     var $column_order = array(
             null, 
             'id',
-            'subcode',
-            'descriptions'
+            'fname',
+            'mname',
+            'lname'
       
     ); //set column field database for datatable orderable
     
     var $column_search = array(
             'id',
-            'subcode',
-            'descriptions'
+            'fname',
+            'mname',
+            'lname'
         
     ); //set column field database for datatable searchable 
     
@@ -81,13 +82,9 @@ class Subject_model extends CI_Model {
  
     private function _get_datatables_query()
     {
-        $active = true;
-        $this->db->where('active =', $active);
-        $this->db->from($this->table);
+         $this->db->from($this->table);
 
-        //$active = 'active';
-        //$this->db->from_where('subjects', array('active' => $active));
-
+ 
         $i = 0;
      
         foreach ($this->column_search as $item) // loop column 
