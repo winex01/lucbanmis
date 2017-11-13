@@ -42,3 +42,6 @@ $route['subjectsList']    = 'subject/ajax_list';
 // reports
 $route['printForm137'] = 'report/printForm137';
 
+// cron
+$route['gitpull'] = 'tools/gitpull';
+

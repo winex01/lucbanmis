@@ -111,25 +111,25 @@ class Tools extends CI_Controller {
 
         $migration_template = "<?php
 
-class Migration_$name extends CI_Migration {
+                                class Migration_$name extends CI_Migration {
 
-    public function up() {
-        \$this->dbforge->add_field(array(
-            'id' => array(
-                'type' => 'INT',
-                'constraint' => 11,
-                'auto_increment' => TRUE
-            )
-        ));
-        \$this->dbforge->add_key('id', TRUE);
-        \$this->dbforge->create_table('$table_name');
-    }
+                                    public function up() {
+                                        \$this->dbforge->add_field(array(
+                                            'id' => array(
+                                                'type' => 'INT',
+                                                'constraint' => 11,
+                                                'auto_increment' => TRUE
+                                            )
+                                        ));
+                                        \$this->dbforge->add_key('id', TRUE);
+                                        \$this->dbforge->create_table('$table_name');
+                                    }
 
-    public function down() {
-        \$this->dbforge->drop_table('$table_name');
-    }
+                                    public function down() {
+                                        \$this->dbforge->drop_table('$table_name');
+                                    }
 
-}";
+                                }";
 
         fwrite($my_migration, $migration_template);
 
@@ -145,45 +145,50 @@ class Migration_$name extends CI_Migration {
 
         $seed_template = "<?php
 
-class $name extends Seeder {
+                            class $name extends Seeder {
 
-    private \$table = 'users';
+                                private \$table = 'users';
 
-    public function run() {
-        \$this->db->truncate(\$this->table);
+                                public function run() {
+                                    \$this->db->truncate(\$this->table);
 
-        //seed records manually
-        \$data = [
-            'user_name' => 'admin',
-            'password' => '9871'
-        ];
-        \$this->db->insert(\$this->table, \$data);
+                                    //seed records manually
+                                    \$data = [
+                                        'user_name' => 'admin',
+                                        'password' => '9871'
+                                    ];
+                                    \$this->db->insert(\$this->table, \$data);
 
-        //seed many records using faker
-        \$limit = 33;
-        echo \"seeding \$limit user accounts\";
+                                    //seed many records using faker
+                                    \$limit = 33;
+                                    echo \"seeding \$limit user accounts\";
 
-        for (\$i = 0; \$i < \$limit; \$i++) {
-            echo \".\";
+                                    for (\$i = 0; \$i < \$limit; \$i++) {
+                                        echo \".\";
 
-            \$data = array(
-                'user_name' => \$this->faker->unique()->userName,
-                'password' => '1234',
-            );
+                                        \$data = array(
+                                            'user_name' => \$this->faker->unique()->userName,
+                                            'password' => '1234',
+                                        );
 
-            \$this->db->insert(\$this->table, \$data);
-        }
+                                        \$this->db->insert(\$this->table, \$data);
+                                    }
 
-        echo PHP_EOL;
-    }
-}
-";
+                                    echo PHP_EOL;
+                                }
+                            }
+                            ";
 
         fwrite($my_seed, $seed_template);
 
         fclose($my_seed);
 
         echo "$path seeder has successfully been created." . PHP_EOL;
+    }
+
+    public function gitpull()
+    {
+         echo shell_exec("cd /var/www/lucbanmis/ && git pull");
     }
 
 }
