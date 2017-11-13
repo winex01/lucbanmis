@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// default
+$route['default_controller']   = 'auth/login';
+$route['404_override']         = '';
+$route['translate_uri_dashes'] = FALSE;
+
 //auth
 $route['login']  = 'auth/login';
 $route['logout'] = 'auth/logout';
@@ -37,7 +42,3 @@ $route['subjectsList']    = 'subject/ajax_list';
 // reports
 $route['printForm137'] = 'report/printForm137';
 
-// default
-$route['default_controller']   = 'auth/login';
-$route['404_override']         = '';
-$route['translate_uri_dashes'] = FALSE;
