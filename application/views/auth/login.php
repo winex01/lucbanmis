@@ -27,7 +27,7 @@
       <h3 class="panel-title">Login</h3>
     </div>
     <div class="panel-body">
-      testing
+
 
         <?php $this->load->view('flash/validationErrors'); ?>
 
