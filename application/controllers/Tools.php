@@ -186,9 +186,6 @@ class Tools extends CI_Controller {
         echo "$path seeder has successfully been created." . PHP_EOL;
     }
 
-    public function gitpull()
-    {
-         echo shell_exec("cd /var/www/lucbanmis/ && git pull");
-    }
+    
 
 }
