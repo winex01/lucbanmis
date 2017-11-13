@@ -9,10 +9,10 @@
 <!-- end modals -->
 
 
-<script src="<?= base_url('public/js/jquery-2.2.3.min.js'); ?>"></script>
-<script src="<?= base_url('public/js/bootstrap.min.js'); ?>"></script>
+<script src="public/js/jquery-2.2.3.min.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
 <!-- Data Tables -->
-<script type="text/javascript" src="<?= base_url('public/js/jquery.dataTables.min.js'); ?>"></script>
+<script type="text/javascript" src="public/js/jquery.dataTables.min.js"></script>
 
 
 <?php $this->load->view('datatable/users'); ?>
