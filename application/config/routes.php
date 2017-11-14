@@ -58,7 +58,7 @@ $route['sy']      = 'schoolyear/schoolyears';
 $route['syList']  = 'schoolyear/ajax_list';
 $route['syDelete'] = 'schoolyear/delete';
 
-$route['test']      = 'test/schoolyears';
+// $route['test']      = 'test/schoolyears';
 
 
 
