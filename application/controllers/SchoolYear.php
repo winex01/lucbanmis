@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class SchoolYear extends CI_Controller {
+class Schoolyear extends CI_Controller {
 
 	public function __construct()
 	{
