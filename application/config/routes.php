@@ -42,7 +42,7 @@ $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
 // schoolyear
-$route['school']      = 'schoolyear/schoolyears';
+$route['school']      = 'test/schoolyears';
 // $route['schoolYearsList']  = 'schoolyear/ajax_list';
 // $route['deleteSchoolYear'] = 'schoolyear/delete';
 
