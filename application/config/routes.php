@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// schoolyear
+$route['schoolyears']      = 'schoolyear/schoolyears';
+$route['schoolyearsList']  = 'schoolyear/ajax_list';
+$route['deleteSchoolYear'] = 'schoolyear/delete';
+
 
 // default
 $route['default_controller']   = 'auth/login';
@@ -41,9 +46,12 @@ $route['addSubjectPage']  = 'subject/addSubjectPage';
 $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
-// schoolyear
-$route['school']      = 'test/schoolyears';
-// $route['schoolYearsList']  = 'schoolyear/ajax_list';
-// $route['deleteSchoolYear'] = 'schoolyear/delete';
+// reports
+$route['printForm137'] = 'report/printForm137';
+
+// cron
+$route['gitpull'] = 'cron/gitpull';
+
+$route['test']      = 'schoolyear/tests';
 
 
