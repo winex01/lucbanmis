@@ -42,9 +42,12 @@ $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
 // schoolyear
-$route['schoolYears']      = 'schoolyear/schoolyears';
-$route['schoolYearsList']  = 'schoolyear/ajax_list';
-$route['deleteSchoolYear'] = 'schoolyear/delete';
+// $route['schoolYears']      = 'schoolyear/schoolyears';
+// $route['schoolYearsList']  = 'schoolyear/ajax_list';
+// $route['deleteSchoolYear'] = 'schoolyear/delete';
+$route['sy']      = 'schoolyear/schoolyears';
+$route['syList']  = 'schoolyear/ajax_list';
+$route['syDelete'] = 'schoolyear/delete';
 
 // reports
 $route['printForm137'] = 'report/printForm137';
