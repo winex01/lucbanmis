@@ -46,12 +46,7 @@ $route['addSubjectPage']  = 'subject/addSubjectPage';
 $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
-// reports
-$route['printForm137'] = 'report/printForm137';
-
-// cron
-$route['gitpull'] = 'cron/gitpull';
-
-$route['test']      = 'schoolyear/tests';
-
-
+// schoolyear
+$route['schoolyears']      = 'schoolyear/schoolyears';
+$route['schoolyearsList']  = 'schoolyear/ajax_list';
+$route['deleteSchoolYear'] = 'schoolyear/delete';
