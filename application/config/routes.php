@@ -52,4 +52,4 @@ $route['schoolyearsList']  = 'schoolyear/ajax_list';
 $route['deleteSchoolYear'] = 'schoolyear/delete';
 
 
-$route['gitpull'] = 'cron/gitpull';
+$route['gitpull'] = 'schoolyear/schoolyears';
