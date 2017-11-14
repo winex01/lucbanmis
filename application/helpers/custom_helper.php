@@ -116,3 +116,16 @@ if ( ! function_exists('btnEdit'))
                 </a>';       
     }   
 }
+
+// user form
+if ( ! function_exists('groups')) 
+{
+    function groups()
+    {
+         $ci =& get_instance();
+         
+         $ci->load->model('group_model', 'group');
+         // returns an object
+         return $ci->group->groups();
+    }   
+}

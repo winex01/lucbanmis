@@ -114,6 +114,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('lname', 'Last Name', 'required');   
         $this->form_validation->set_rules('birthdate', 'Birthdate', 'required');   
         $this->form_validation->set_rules('gender', 'Gender', 'required'); #not neccessary
+        $this->form_validation->set_rules('group', 'Group', 'required'); #not neccessary
         $this->form_validation->set_rules('uname', 'Username', 'required'); 
 
         $request = $this->input->post('request');
@@ -123,6 +124,7 @@ class User extends CI_Controller {
         $birth_date = $this->input->post('birthdate');
         $gender = $this->input->post('gender');
         $username = $this->input->post('uname');
+        $group_id = $this->input->post('group');
         $password = md5('password');
 
         if ($this->form_validation->run() == FALSE) {
@@ -143,6 +145,7 @@ class User extends CI_Controller {
                     'last_name',
                     'birth_date',
                     'gender',
+                    'group_id',
                     'username',
                     'password'
                 );
