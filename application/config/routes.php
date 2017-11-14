@@ -53,12 +53,12 @@ $route['printForm137'] = 'report/printForm137';
 // cron
 $route['gitpull'] = 'cron/gitpull';
 
-$route['test']      = 'test/schoolyears';
 
 $route['sy']      = 'schoolyear/schoolyears';
 $route['syList']  = 'schoolyear/ajax_list';
 $route['syDelete'] = 'schoolyear/delete';
 
+$route['test']      = 'test/schoolyears';
 
 
 
