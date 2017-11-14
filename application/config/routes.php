@@ -45,6 +45,7 @@ $route['schoolyearsList']  = 'schoolyear/ajax_list';
 $route['deleteSchoolYear'] = 'schoolyear/delete';
 
 
+
 // reports
 $route['printForm137'] = 'report/printForm137';
 
