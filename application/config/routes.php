@@ -47,12 +47,3 @@ $route['school']      = 'schoolyear/schoolyears';
 // $route['deleteSchoolYear'] = 'schoolyear/delete';
 
 
-// reports
-$route['printForm137'] = 'report/printForm137';
-
-// cron
-$route['gitpull'] = 'cron/gitpull';
-
-
-
-
