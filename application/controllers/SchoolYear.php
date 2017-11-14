@@ -61,4 +61,9 @@ class SchoolYear extends CI_Controller {
 
     }
 
+    public function tests()
+    {
+        echo 'test';
+    }
+
 }
