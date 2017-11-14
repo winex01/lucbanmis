@@ -193,6 +193,7 @@ class User extends CI_Controller {
         $birth_date = $this->input->post('birthdate');
         $gender = $this->input->post('gender');
         $username = $this->input->post('uname');
+        $group_id = $this->input->post('group');
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -207,6 +208,7 @@ class User extends CI_Controller {
             'last_name',
             'birth_date',
             'gender',
+            'group_id',
             'username'
         );
         //update and save
