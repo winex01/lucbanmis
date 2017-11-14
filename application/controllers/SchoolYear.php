@@ -9,7 +9,7 @@ class Schoolyear extends CI_Controller {
 		$this->load->model('SchoolYear_model','schoolYear');
 	}
 
-	public function schoolyears()
+	public function index()
 	{
 		$page = 'schoolyear/schoolyears';
 		$this->load->view('template', compact('page'));
