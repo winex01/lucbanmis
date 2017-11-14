@@ -52,7 +52,7 @@ $route['printForm137'] = 'report/printForm137';
 // cron
 $route['gitpull'] = 'cron/gitpull';
 
-$route['test']      = 'test/schoolyears';
+$route['school']      = 'test/schoolyears';
 
 
 
