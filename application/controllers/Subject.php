@@ -75,7 +75,7 @@ class Subject extends CI_Controller {
 		$status = true;
 		$this->subject->addSubject($scode, $subdes, $status);
 		flashInfo("New Subject Added Successfully!");
-		redirect('student/students');
+		redirect('subject/subjects');
 
 	}
 

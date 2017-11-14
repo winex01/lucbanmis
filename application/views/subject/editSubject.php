@@ -28,13 +28,13 @@
             <label for="scode" class="col-lg-2 control-label">Subject Code</label>
             <div class="col-lg-10">
                <input value="<?php echo $id; ?>" name="id" type="hidden" class="form-control" id="scode">
-              <input value="<?php echo $subcode; ?>" name="scode" type="text" class="form-control" id="scode" placeholder="Subject Code">
+              <input value="<?php echo $subcode; ?>" name="scode" type="text" class="form-control" id="scode" placeholder="Subject Code" required>
             </div>
           </div>
           <div class="form-group">
             <label for="subdes" class="col-lg-2 control-label">Descriptions</label>
             <div class="col-lg-10">
-              <input value="<?php echo $descriptions; ?>" name="subdes" type="text" class="form-control" id="subdes" placeholder="Descriptions">
+              <input value="<?php echo $descriptions; ?>" name="subdes" type="text" class="form-control" id="subdes" placeholder="Descriptions" required>
             </div>
           </div>
 

@@ -29,25 +29,25 @@
                 <label for="fname" class="col-lg-2 control-label">First Name</label>
                 <div class="col-lg-10">
                   <input value="<?php echo $id; ?>" type="hidden" class="form-control" name="fname" placeholder="First Name">
-                  <input value="<?php echo $fname; ?>" type="text" class="form-control" name="fname" placeholder="First Name">
+                  <input value="<?php echo $fname; ?>" type="text" class="form-control" name="fname" placeholder="First Name" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="mname" class="col-lg-2 control-label">Middle Name</label>
                 <div class="col-lg-10">
-                  <input value="<?php echo $mname; ?>" type="text" class="form-control" name="mname" placeholder="Middle Name">
+                  <input value="<?php echo $mname; ?>" type="text" class="form-control" name="mname" placeholder="Middle Name" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="lname" class="col-lg-2 control-label">Last Name</label>
                 <div class="col-lg-10">
-                  <input value="<?php echo $lname; ?>" type="text" class="form-control" name="lname" ="lname" placeholder="Last Name">
+                  <input value="<?php echo $lname; ?>" type="text" class="form-control" name="lname" ="lname" placeholder="Last Name" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="gender" class="col-lg-2 control-label">Gender</label>
                 <div class="col-lg-10">
-                    <select class="form-control" name="gender">
+                    <select class="form-control" name="gender" required>
                       <option>
                         <?php echo $gender; ?>
                       </option>
@@ -65,7 +65,7 @@
                 <div class="row">
                 <div class="col-sm-3">
 
-                <input value="<?php echo $bdate; ?>" type="date" class="form-control" name="bdate">
+                <input value="<?php echo $bdate; ?>" type="date" class="form-control" name="bdate" required>
 
                 </div>
               </div>
