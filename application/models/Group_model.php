@@ -106,6 +106,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -119,6 +120,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -146,6 +148,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -163,6 +166,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -176,6 +180,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -189,6 +194,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
