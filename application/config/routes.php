@@ -1,15 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// default
-$route['default_controller']   = 'auth/login';
-$route['404_override']         = '';
-$route['translate_uri_dashes'] = FALSE;
-
 // schoolyear
 $route['schoolyears']      = 'schoolyear/schoolyears';
 $route['schoolyearsList']  = 'schoolyear/ajax_list';
 $route['deleteSchoolYear'] = 'schoolyear/delete';
+
+
+// default
+$route['default_controller']   = 'auth/login';
+$route['404_override']         = '';
+$route['translate_uri_dashes'] = FALSE;
 
 
 //auth
