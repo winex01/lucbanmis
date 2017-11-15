@@ -59,6 +59,17 @@
             </div>
 
             <div class="form-group">
+              <label for="gender" class="col-lg-2 control-label">Groups</label>
+              <div class="col-lg-2">
+                   <select class="form-control" id="gender" name="group">
+                    <?php foreach(groups() as $group): ?>
+                      <option <?php set_dropdown('group', $group->id); ?> value="<?= $group->id ?>"><?= ucfirst($group->description); ?></option>
+                    <?php endforeach; ?>
+                  </select>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label for="uname" class="col-lg-2 control-label">User Name</label>
               <div class="col-lg-3">
                 <input value="<?= set_value('uname'); ?>" type="text" class="form-control" id="uname" name="uname" placeholder="User Name">

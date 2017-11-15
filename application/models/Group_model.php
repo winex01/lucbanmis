@@ -3,6 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Group_model extends CI_Model {
 
+    // list of all groups
+    public function groups()
+    {
+        return $this->db->query("
+            SELECT id, description
+            FROM groups
+        ")->result();
+
+    }
+
     /**
     * dashboards
     *
@@ -96,6 +106,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -109,6 +120,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -136,6 +148,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -153,6 +166,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -166,6 +180,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
@@ -179,6 +194,7 @@ class Group_model extends CI_Model {
         $access = false;
         switch ($this->auth->groupDescription()) {
             case 'registrar':
+            case 'administrator': #REMOVE
                     $access = true;
                 break;
             
