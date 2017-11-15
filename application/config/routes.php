@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// default
+$route['default_controller']   = 'auth/login';
+$route['404_override']         = '';
+$route['translate_uri_dashes'] = FALSE;
+
 //auth
 $route['login']  = 'auth/login';
 $route['logout'] = 'auth/logout';
@@ -19,7 +24,7 @@ $route['updateUser']	  = 'user/update';
 $route['editUser/(:num)'] = 'user/edit/$1';
 
 // students
-$route['deleteStudent']   = 'student/deleteStudent';
+$route['deleteStudent/(:num)']   = 'student/deleteStudent/$1';
 $route['editStudentPage/(:num)']   = 'student/editStudentPage/$1';
 $route['addNewStudent']   = 'student/addNewStudent';
 $route['addStudentPage'] = 'student/addStudentPage';
@@ -38,7 +43,6 @@ $route['subjectsList']    = 'subject/ajax_list';
 // reports
 $route['printForm137'] = 'report/printForm137';
 
-// default
-$route['default_controller']   = 'auth/login';
-$route['404_override']         = '';
-$route['translate_uri_dashes'] = FALSE;
+// cron
+$route['gitpull'] = 'cron/gitpull';
+

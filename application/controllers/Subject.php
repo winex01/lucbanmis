@@ -8,9 +8,9 @@ class Subject extends CI_Controller {
         parent::__construct();
         $this->load->model('Subject_model','subject');
     
-        if (!$this->group->accessAddSubject()) {
-			redirect('/');
-		}
+  //       if (!$this->group->accessAddSubject()) {
+		// 	redirect('/');
+		// }
     }
 
 	public function subjects()

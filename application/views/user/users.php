@@ -20,7 +20,7 @@
       <br>
       <br>
 
-        <table id="users-table" class="table table-hover table-striped">
+        <table id="users-table" class="table table-hover table-striped table-responsive">
             <thead>
                 <tr>
                     <th>No</th>
