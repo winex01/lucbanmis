@@ -47,7 +47,3 @@ $route['addSubjectPage']  = 'subject/addSubjectPage';
 $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
-// schoolyear
-$route['schoolyears'] = 'sy/schoolyears';
-$route['schoolyearsList']  = 'sy/ajax_list';
-$route['deleteSchoolYear'] = 'sy/delete';
