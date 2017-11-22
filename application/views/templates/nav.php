@@ -77,12 +77,12 @@
 
                     <!-- school year -->
                     <li class="dropdown <?php active('subjects'); active('addSubject'); ?>">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> School Year<span class="caret"></span></a>
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Enroll<span class="caret"></span></a>
                       <ul class="dropdown-menu" aria-labelledby="download">
 
-                          <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('schoolyears') ?>"><i class="ion ion-ios-search"> </i> View School Year</a></li>
+                          <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('schoolyears') ?>"><i class="ion ion-ios-search"> </i> View Enrolled</a></li>
                         
-                        <li class="<?php active('addSchoolYear'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add School Year</a></li>
+                        <li class="<?php active('addSchoolYear'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add Enroll</a></li>
 
                       </ul>
                     </li>

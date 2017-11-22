@@ -77,13 +77,9 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-<<<<<<< HEAD
-	// 'password' => '',
 	'password' => '',
-=======
+
 	'password' => '',
-	// 'password' => 'pass123',
->>>>>>> 82cae9081fb5a1ce06390985db349ae6b281d21b
 	'database' => 'lucbanmis',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
