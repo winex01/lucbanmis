@@ -78,7 +78,8 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	// 'password' => 'pass123',
+
+	'password' => '',
 	'database' => 'lucbanmis',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
