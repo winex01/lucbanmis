@@ -5,7 +5,7 @@ class Enroll_model extends CI_Model {
 
 
 
-    var $table = 'subjects';
+    var $table = 'enrolls';
     
 
  
@@ -59,7 +59,7 @@ class Enroll_model extends CI_Model {
         return false;
     }
 
-    public function viewSubject($id)
+    public function viewEnrolled($id)
     {
         $this->db->select('*');
         $this->db->from($this->table);
@@ -74,15 +74,15 @@ class Enroll_model extends CI_Model {
     var $column_order = array(
             null, 
             'id',
-            'subcode',
-            'descriptions'
+            'school_year',
+            'semester'
       
     ); //set column field database for datatable orderable
     
     var $column_search = array(
             'id',
-            'subcode',
-            'descriptions'
+            'school_year',
+            'semester'
         
     ); //set column field database for datatable searchable 
     
@@ -90,13 +90,9 @@ class Enroll_model extends CI_Model {
  
     private function _get_datatables_query()
     {
-        $active = true;
-        $this->db->where('active =', $active);
         $this->db->from($this->table);
 
-        //$active = 'active';
-        //$this->db->from_where('subjects', array('active' => $active));
-
+  
         $i = 0;
      
         foreach ($this->column_search as $item) // loop column 

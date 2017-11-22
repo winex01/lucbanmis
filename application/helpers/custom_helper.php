@@ -105,6 +105,19 @@ if ( ! function_exists('set_dropdown'))
 }
 
 
+if ( ! function_exists('btnViewEnrolled'))
+{
+    function btnViewEnrolled($var, $url)
+    {
+         $ci =& get_instance();
+         
+        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-success btn-sm" data-toggle="tooltip" title="Enrolled">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </a>';       
+    }   
+}
+
+
 if ( ! function_exists('btnEdit'))
 {
     function btnEdit($var, $url)

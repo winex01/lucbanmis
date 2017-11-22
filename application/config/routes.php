@@ -47,3 +47,7 @@ $route['addSubjectPage']  = 'subject/addSubjectPage';
 $route['subjects']        = 'subject/subjects';
 $route['subjectsList']    = 'subject/ajax_list';
 
+
+//enrolls
+$route['enrolled'] = 'enroll/enrolled';
+$route['enrollsList']    = 'enroll/ajax_list';

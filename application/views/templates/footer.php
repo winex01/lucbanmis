@@ -18,7 +18,7 @@
 <?php $this->load->view('datatable/users'); ?>
 <?php $this->load->view('datatable/students'); ?>
 <?php $this->load->view('datatable/subjects'); ?>
-<?php $this->load->view('datatable/schoolyears'); ?>
+<?php $this->load->view('datatable/enrolled'); ?>
 
 
 <script type="text/javascript">

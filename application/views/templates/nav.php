@@ -80,9 +80,9 @@
                       <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Enroll<span class="caret"></span></a>
                       <ul class="dropdown-menu" aria-labelledby="download">
 
-                          <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('schoolyears') ?>"><i class="ion ion-ios-search"> </i> View Enrolled</a></li>
+                          <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('enrolled') ?>"><i class="ion ion-ios-search"> </i> View Enrolled</a></li>
                         
-                        <li class="<?php active('addSchoolYear'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add Enroll</a></li>
+                        <li class="<?php active('addEnroll'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add Enroll</a></li>
 
                       </ul>
                     </li>
