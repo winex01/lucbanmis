@@ -51,7 +51,6 @@ $route['subjectsList']           = 'subject/ajax_list';
 //enrolls
 $route['enrolled']            = 'enroll/enrolled';
 $route['enrollsList']         = 'enroll/ajax_list';
-$route['viewEnrolled/(:num)'] = 'enroll/enrolledStudents/$1';
-
 
 // enrolled students
+$route['viewEnrolled/(:num)'] = 'enrolledStudents/index/$1';

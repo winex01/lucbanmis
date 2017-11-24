@@ -109,16 +109,4 @@ class Enroll extends CI_Controller {
         echo json_encode($output);
     }
 
-    public function enrolledStudents($id)
-    {                                                                             
-        if (!$this->enroll_m->check($id)) {
-            redirect('enrolled');
-        }
-
-        // load enrolled students on this enroll periods
-        $page = 'enrolledStudent/enrolledStudents';
-        $this->load->view('template', compact('page'));
-
-    }
-
 }
