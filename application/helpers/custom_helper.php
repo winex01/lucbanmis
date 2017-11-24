@@ -111,8 +111,9 @@ if ( ! function_exists('btnViewEnrolled'))
     {
          $ci =& get_instance();
          
-        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-success btn-sm" data-toggle="tooltip" title="Enrolled">
-                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-success btn-sm" data-toggle="tooltip" title="List">
+                  <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                  List
                 </a>';       
     }   
 }

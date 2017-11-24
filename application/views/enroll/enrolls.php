@@ -9,7 +9,7 @@
           <li>
             <a href="dashboard">Dashboard</a>
           </li>
-          <li class="active">View Subjects</li>
+          <li class="active">Enroll Periods</li>
         </ol>
 
 

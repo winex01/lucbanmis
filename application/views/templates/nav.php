@@ -75,17 +75,17 @@
                     </li>
             <?php endif; ?>
 
-                    <!-- school year -->
-                    <li class="dropdown <?php active('subjects'); active('addSubject'); ?>">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Enroll<span class="caret"></span></a>
-                      <ul class="dropdown-menu" aria-labelledby="download">
+            <!-- enroll -->
+            <li class="dropdown <?php active('enrolled');  ?>">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download"><i class="ion ion-android-settings"> </i> Enroll<span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="download">
 
-                          <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('enrolled') ?>"><i class="ion ion-ios-search"> </i> View Enrolled</a></li>
-                        
-                        <li class="<?php active('addEnroll'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add Enroll</a></li>
+                  <li class="<?php active('schoolyears'); ?>"><a href="<?= base_url('enrolled') ?>"><i class="ion ion-ios-search"> </i> View Enroll Periods</a></li>
+                
+                <li class="<?php active('addEnroll'); ?>"><a href="#"><i class="ion ion-ios-plus"> </i> Add Enroll</a></li>
 
-                      </ul>
-                    </li>
+              </ul>
+            </li>
 
           </ul>
 

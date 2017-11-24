@@ -46,7 +46,7 @@ class Student_model extends CI_Model {
 
 
 
-  public function checkUser($id)
+  public function check($id)
     {
         $this->db->select('*');
         $this->db->where('id', $id);

@@ -45,11 +45,10 @@ class Enroll_model extends CI_Model {
     }
 
 
-  public function checkUser($id)
+  public function check($id)
     {
         $this->db->select('*');
         $this->db->where('id', $id);
-         $this->db->where('active', true);
         $result = $this->db->get($this->table);
 
         if($result->num_rows() > 0) {

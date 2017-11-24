@@ -44,8 +44,8 @@ class Student extends CI_Controller {
     public function editStudentPage($id='')
     {
 
-		if (!$this->Student->checkUser($id)) {
-        redirect('students');
+		if (!$this->Student->check($id)) {
+            redirect('students');
         }
 
 	 
@@ -85,7 +85,7 @@ class Student extends CI_Controller {
 		$bdate = $this->input->post('bdate');
 		$this->Student->addStudent($fname, $mname, $lname, $gender, $bdate);
 		flashInfo("New Student Added Successfully!");
-	    redirect('student/students');
+    	    redirect('student/students');
 
 	}
 

@@ -32,22 +32,26 @@ $route['editUser/(:num)'] = 'user/edit/$1';
 
 // students
 $route['deleteStudent/(:num)']   = 'student/deleteStudent/$1';
-$route['editStudentPage/(:num)']   = 'student/editStudentPage/$1';
-$route['addNewStudent']   = 'student/addNewStudent';
-$route['addStudentPage'] = 'student/addStudentPage';
-$route['students']        = 'student/students';
-$route['studentsList']   = 'student/ajax_list';
+$route['editStudentPage/(:num)'] = 'student/editStudentPage/$1';
+$route['addNewStudent']          = 'student/addNewStudent';
+$route['addStudentPage']         = 'student/addStudentPage';
+$route['students']               = 'student/students';
+$route['studentsList']           = 'student/ajax_list';
 
 //subjects
-$route['deleteSubject']   = 'subject/deleteSubject';
-$route['editSubject']     = 'subject/editSubject';
+$route['deleteSubject']          = 'subject/deleteSubject';
+$route['editSubject']            = 'subject/editSubject';
 $route['editSubjectPage/(:num)'] = 'subject/editSubjectPage/$1';
-$route['addNewSubject']   = 'subject/addNewSubject';
-$route['addSubjectPage']  = 'subject/addSubjectPage';
-$route['subjects']        = 'subject/subjects';
-$route['subjectsList']    = 'subject/ajax_list';
+$route['addNewSubject']          = 'subject/addNewSubject';
+$route['addSubjectPage']         = 'subject/addSubjectPage';
+$route['subjects']               = 'subject/subjects';
+$route['subjectsList']           = 'subject/ajax_list';
 
 
 //enrolls
-$route['enrolled'] = 'enroll/enrolled';
-$route['enrollsList']    = 'enroll/ajax_list';
+$route['enrolled']            = 'enroll/enrolled';
+$route['enrollsList']         = 'enroll/ajax_list';
+$route['viewEnrolled/(:num)'] = 'enroll/enrolledStudents/$1';
+
+
+// enrolled students
