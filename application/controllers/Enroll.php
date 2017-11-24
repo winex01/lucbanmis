@@ -94,7 +94,7 @@ class Enroll extends CI_Controller {
             $row[] = $enroll_m->semester;
 
 
-            $action = btnViewEnrolled($enroll_m->id, 'viewEnrolled').' '.btnEdit($enroll_m->id, 'editenrollPage');
+            $action = btnView($enroll_m->id, 'viewEnrolled', 'Student List').' '.btnEdit($enroll_m->id, 'editenrollPage');
             $row[] = $action;
             $data[] = $row;
         }

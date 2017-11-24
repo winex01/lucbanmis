@@ -107,11 +107,11 @@ if ( ! function_exists('set_dropdown'))
 
 if ( ! function_exists('btnViewEnrolled'))
 {
-    function btnViewEnrolled($var, $url)
+    function btnView($var, $url, $tooltip = '')
     {
          $ci =& get_instance();
          
-        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-success btn-sm" data-toggle="tooltip" title="List">
+        return '<a href="'.base_url($url).'/'.$var.'" class="btn btn-default btn-success btn-sm" data-toggle="tooltip" title="'.$tooltip.'">
                   <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
                   List
                 </a>';       
