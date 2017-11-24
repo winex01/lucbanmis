@@ -9,9 +9,6 @@ class Enroll extends CI_Controller {
         $this->load->model('Enroll_model','enroll_m');
         $this->load->model('Student_model','student');
     
-  //       if (!$this->group->accessAddSubject()) {
-		// 	redirect('/');
-		// }
     }
 
 	public function enrolled()
@@ -94,7 +91,7 @@ class Enroll extends CI_Controller {
             $row[] = $enroll_m->semester;
 
 
-            $action = btnView($enroll_m->id, 'viewEnrolled', 'Student List').' '.btnEdit($enroll_m->id, 'editenrollPage');
+            $action = btnView($enroll_m->id, 'viewEnrolled', 'Enrolled Students').' '.btnEdit($enroll_m->id, 'editenrollPage');
             $row[] = $action;
             $data[] = $row;
         }
